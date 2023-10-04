@@ -18,6 +18,7 @@
     // font-sizes
 
     --font-size-big: 30px;
+    --font-size-mid-big: 26px;
     --font-size-mid: 24px;
     --font-size-sub-mid : 18px;
     --font-size-regular: 16px;
@@ -31,13 +32,16 @@
     --primary-color: #295CAB;
     --theme-orange: #FE9800;
     --theme-gray: #E5E5E5;
-    --theme-black: #343a40;
+    --theme-light-black-1: rgb(122, 122, 122);
+    --theme-black: #555555;
     --theme-light-black: #494f55  ;
     --theme-light-gray: #F0F0F0;
     --font-color-1: #494f55;
     --font-color-white: white;
-    --them--dark: black;
+    --them-dark: black;
     --theme-gold: antiquewhite;
+
+    --border: 0.1px solid rgba(0, 0, 0, 0.20);
 
 
 }
@@ -52,6 +56,10 @@ a{
         text-decoration: underline;
         
     }
+}
+
+img{
+    user-select: none !important;
 }
 // Header
 
@@ -131,7 +139,7 @@ header{
                 margin-left:1.5em;
                 width:35px;
                 height:35px;
-                border:2px solid black;
+                border:2px solid var(--theme-black);
                 border-radius: 50%;
                 display: none;
                 align-items: center;
@@ -143,14 +151,14 @@ header{
                 .b1{
                     width:15px;
                     height:2px;
-                    background:black;
+                    background:var(--theme-black);
                     margin:auto;
 
                 }
                 .b2{
                     width:20px;
                     height:2px;
-                    background:black;
+                    background:var(--theme-black);
                     margin:.3em auto;
                 }
 
@@ -159,7 +167,7 @@ header{
                     .c-b1, .c-b2{
                         width:20px;
                         height:2px;
-                        background:black;
+                        background:var(--theme-black);
                         position: absolute;
                         right:-10px;
                         top:-1px;
@@ -224,9 +232,10 @@ header{
 // Container
 
 .container{
-    height:100vh;
-    width:100%;
     
+    width:80%;
+    margin:auto;
+    max-width:1500px;
 }
 
 // End Container
@@ -337,9 +346,12 @@ body::-webkit-scrollbar-thumb {
             margin-bottom: 1em !important;
         }
     }
+    .container{
+        width:90% !important;
+    }
 }
 
-@media only screen and (max-width:850px){
+@media only screen and (max-width:900px){
 
    
     .desktop-nav-links{
@@ -352,6 +364,14 @@ body::-webkit-scrollbar-thumb {
     .footer-container{
         display: block !important;
         
+    }
+}
+@media only screen and (max-width:375px){
+    .logo{
+        
+        h2{
+            font-size:var(--font-size-mid-big)
+        }
     }
 }
 
