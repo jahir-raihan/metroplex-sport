@@ -167,7 +167,7 @@ body{
 
     .court-or-field{
         overflow: hidden;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         .c-f-header{
             cursor: pointer;
             display: flex;
@@ -299,6 +299,167 @@ body{
 
         }
     }
+}
+
+.selections-and-team-details{
+    
+    border-top:3px solid var(--primary-color);
+    margin-top:2em;
+
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap:4%;
+    
+    padding:1em 0;
+
+    .title{
+            
+        font-weight: 500;
+        font-size:var(--font-size-sub-mid);
+        color: var(--theme-black);
+        margin-bottom: .5em;
+    }
+    .slot-details-and-total-amount{
+        
+        table{
+            width:100%;
+            
+            tr{
+                
+                td{
+                    font-size:var(--font-size-normal);
+                    padding:1em .5em;
+                    span{
+                        display: block;
+                    }
+                    border-bottom: var(--border);
+                }
+                td:last-child{
+                    text-align: center;
+                    
+                    i:hover{
+                        color:var(--theme-orange);
+                        cursor:pointer;
+                    }
+                }
+            }
+            tr:last-child{
+                td{
+                    border-bottom: none;
+                }
+            }
+            .header-row{
+                
+                
+                td{
+                    background:var(--theme-gray);
+                    padding:.5em;
+                    font-size:var(--font-size-normal);
+                    border-bottom: none;
+                    color:var(--theme-black);
+                    font-weight: 500;
+                      
+                }
+                td:first-child{
+                    border-radius: 4px 0 0 4px;
+                    width:50%;
+            
+                }
+                td:last-child{
+                    border-radius: 0 4px 4px 0;
+                }
+
+            }
+            
+            
+            
+        }
+        table, th, td{
+            border-collapse: collapse;
+        }   
+
+       
+    }
+
+    .team-details{
+        .team-details-header{
+            display: flex;
+            justify-content: space-between;
+            background:var(--theme-gray);
+            border-radius: 4px;
+            gap:10%;
+            
+            p{
+                width:45%;
+                color:var(--theme-black);
+                font-weight: 500;
+                padding:.5em;
+                font-size:var(--font-size-normal);
+            }
+            p:last-child{
+                padding-left:0;
+            }
+        }
+
+        .team-name-input{
+            padding:1.1em 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border);
+            p{
+                font-weight: 500;
+                font-size:var(--font-size-small);
+            }
+            input{
+                display:block;
+                width:45%;
+                height:35px;
+                border:none;
+                background:var(--theme-light-gray);
+                padding:.5em;
+                border-radius: 4px;
+                outline:none;
+                opacity: var(--opacity-1);
+                text-transform: uppercase;
+                font-weight: 500;
+
+            }
+        }
+
+        .team-name-input:last-child{
+            border-bottom: none;
+        }
+
+
+    } 
+    .note-and-total-amount{
+        margin-top:1em;
+        .note{
+            font-size:var(--font-size-normal);
+            font-weight: 600;
+            i{
+                color:var(--theme-orange);
+
+            }
+            margin-bottom: .5em;
+
+
+        }
+
+        
+
+        .total-amount{
+            display: flex;
+            justify-content: space-between;
+            font-size:var(--font-size-normal);
+            background:var(--theme-gray);
+            padding:.5em 1em;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+    }
+
 }
 
 // End Time slots container

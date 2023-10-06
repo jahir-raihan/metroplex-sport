@@ -119,7 +119,7 @@ body {
 
 .courts-or-fields-container .court-or-field {
   overflow: hidden;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 .courts-or-fields-container .court-or-field .c-f-header {
   cursor: pointer;
@@ -225,6 +225,124 @@ body {
 }
 .courts-or-fields-container .court-or-field .c-f-contents-active {
   display: block;
+}
+
+.selections-and-team-details {
+  border-top: 3px solid var(--primary-color);
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  padding: 1em 0;
+}
+.selections-and-team-details .title {
+  font-weight: 500;
+  font-size: var(--font-size-sub-mid);
+  color: var(--theme-black);
+  margin-bottom: 0.5em;
+}
+.selections-and-team-details .slot-details-and-total-amount table {
+  width: 100%;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td {
+  font-size: var(--font-size-normal);
+  padding: 1em 0.5em;
+  border-bottom: var(--border);
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td span {
+  display: block;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td:last-child {
+  text-align: center;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td:last-child i:hover {
+  color: var(--theme-orange);
+  cursor: pointer;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr:last-child td {
+  border-bottom: none;
+}
+.selections-and-team-details .slot-details-and-total-amount table .header-row td {
+  background: var(--theme-gray);
+  padding: 0.5em;
+  font-size: var(--font-size-normal);
+  border-bottom: none;
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.selections-and-team-details .slot-details-and-total-amount table .header-row td:first-child {
+  border-radius: 4px 0 0 4px;
+  width: 50%;
+}
+.selections-and-team-details .slot-details-and-total-amount table .header-row td:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.selections-and-team-details .slot-details-and-total-amount table, .selections-and-team-details .slot-details-and-total-amount th, .selections-and-team-details .slot-details-and-total-amount td {
+  border-collapse: collapse;
+}
+.selections-and-team-details .team-details .team-details-header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--theme-gray);
+  border-radius: 4px;
+  gap: 10%;
+}
+.selections-and-team-details .team-details .team-details-header p {
+  width: 45%;
+  color: var(--theme-black);
+  font-weight: 500;
+  padding: 0.5em;
+  font-size: var(--font-size-normal);
+}
+.selections-and-team-details .team-details .team-details-header p:last-child {
+  padding-left: 0;
+}
+.selections-and-team-details .team-details .team-name-input {
+  padding: 1.1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border);
+}
+.selections-and-team-details .team-details .team-name-input p {
+  font-weight: 500;
+  font-size: var(--font-size-small);
+}
+.selections-and-team-details .team-details .team-name-input input {
+  display: block;
+  width: 45%;
+  height: 35px;
+  border: none;
+  background: var(--theme-light-gray);
+  padding: 0.5em;
+  border-radius: 4px;
+  outline: none;
+  opacity: var(--opacity-1);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.selections-and-team-details .team-details .team-name-input:last-child {
+  border-bottom: none;
+}
+.selections-and-team-details .note-and-total-amount {
+  margin-top: 1em;
+}
+.selections-and-team-details .note-and-total-amount .note {
+  font-size: var(--font-size-normal);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+.selections-and-team-details .note-and-total-amount .note i {
+  color: var(--theme-orange);
+}
+.selections-and-team-details .note-and-total-amount .total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-normal);
+  background: var(--theme-gray);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 1300px) {
