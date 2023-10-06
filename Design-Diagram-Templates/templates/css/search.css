@@ -169,8 +169,7 @@
     display: block;
   }
   .banner-container img {
-    height: auto !important;
-    max-height: none !important;
+    display: none !important;
   }
   .steps-to-buy {
     display: block;

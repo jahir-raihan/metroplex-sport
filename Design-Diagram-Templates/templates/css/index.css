@@ -196,6 +196,7 @@ header nav .nav-links .ham-menu .mobile-nav ul .active-nav {
   width: 80%;
   margin: auto;
   max-width: 1500px;
+  min-height: 70vh;
 }
 
 footer {

@@ -243,10 +243,10 @@
     .search-banner-container{
         display: block;
         
-    }.banner-container{
+    }
+    .banner-container{
         img{
-            height:auto !important;
-            max-height:none !important;
+            display: none !important;
         }
     }
 
