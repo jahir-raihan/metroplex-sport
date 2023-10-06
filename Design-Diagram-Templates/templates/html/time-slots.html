@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="metroplex">
+    <meta name="description" content="Metroplex is a well known sporting club  held in Dhaka bangladesh, People around 
+    Dhaka playes different types of sport out there, like Badminton, Cricket, Football. Even there is a place for swimming
+    too.">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/time-slots.css">
+    <link rel="shortcut icon" href="../img/logo-small.png" type="image/x-icon">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <script src="../js/index.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/time-slots.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Select</title>
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <h2>Metro<span>Plex</span></h2>
+            </div>
+
+            <div class="nav-links">
+
+                <ul class="desktop-nav-links">
+                    <li class="" id="home-link"><i class="fa fa-house"></i> Home</li>
+                    <li class="active-nav" id="search-link"><i class="fa fa-magnifying-glass"></i> Search</li>
+                    <li id="upcoming-events-link"><i class="fa fa-hourglass-start"></i> Upcoming matches</li>
+                    <li id="about-us-link"><i class="fa fa-circle-info"></i> About us</li>
+
+                </ul>
+
+                <button class="login-btn"><i class="fa fa-arrow-right-to-bracket"></i>  Login</button>
+
+                <div class="ham-menu" onclick="toggle_nav()">
+
+                    <div class="" id="nav-ham">
+                        <div class="b1"></div>
+                        <div class="b2"></div>
+                        <div class="b1"></div>
+                    </div>
+
+                    <div class="d-none" id="nav-ham-cross">
+                        <div class="c-b1"></div>
+                        <div class="c-b2"></div>
+                    </div>
+
+                    <div class="mobile-nav d-none" id="mobile-nav">
+
+                        <ul>
+                            <li onclick="mobile_nav_click_check(this)" class="" id="home-link"><i class="fa fa-house"></i> Home</li>
+                            <li onclick="mobile_nav_click_check(this)" class="active-nav" id="search-link"><i class="fa fa-magnifying-glass"></i> Search</li>
+                            <li onclick="mobile_nav_click_check(this)" id="upcoming-events-link"><i class="fa fa-hourglass-start"></i> Upcoming matches</li>
+                            <li onclick="mobile_nav_click_check(this)" id="about-us-link"><i class="fa fa-circle-info"></i> About us</li>
+                            <li onclick="mobile_nav_click_check(this)" id="login-link"><i class="fa fa-arrow-right-to-bracket"></i> Login</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section class="search-bar">
+
+        <div class="search-bar-container">
+
+        
+            <div class="search-details toggle-close">
+                <div class="logo">
+                    <img src="../img/logo-small.png" alt="">
+                </div>
+                <div class="s-det">
+                    <p class="s-det-title">Badmin - Hourly</p>
+                    <p>08 October, 2023</p>
+                </div>
+            </div>
+
+
+            <div class="prev-next-days toggle-close">
+                <button class="previous-day"> < Previous</button>
+                <button class="next-day disabled" disabled >Next ></button>
+            </div>
+
+
+            <button class="modify-search toggle-close" onclick="toggle_close()">Modify Search</button>
+
+            <form class="modify-search-form d-none-force" id="modify-search-form">
+
+                <div class="date-input">
+                    <p>Pick a date</p>
+                    <input type="text" autocomplete="off" placeholder="Pick a date" min="" required id="date">
+                </div>
+
+                <div class="sport-type-input">
+                    <p>Sport type</p>
+
+                    <div class="select-wrapper">
+                        <select name="sport-type" required id="sport-type">
+
+                            <option value="">Select sport type</option>
+                            <option value="badminton">Badminton</option>
+                            <option value="cricket">Cricket</option>
+                            <option value="football">Football</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="contract-input">
+
+                    <p>Contract duration</p>
+
+                    <div class="select-wrapper">
+
+                        <select name="contract-type" required id="contract-type">
+
+                            <option value="hourly">Hourly</option>
+                            <option value="monthly">Monthly</option>
+                        
+                        </select>
+                    </div>
+                </div>
+
+                <div class="search-and-close">
+                    <p class="close close-1" onclick="toggle_close()">Close <i class="fa fa-xmark"></i></p>
+                    <button type="submit" class="search-btn">Search</button>
+                    <div class="close close-2" onclick="toggle_close()" >Close <span>&Cross;</span></div>
+                </div>
+                
+            </form>
+        </div>
+
+
+
+    </section>
+
+
+    <section class="container time-slots" id="container">
+
+        <div class="time-slots-container search-banner-container">
+
+            <div class="courts-or-fields-container">
+                
+                <div class="court-or-field" id="court-or-field-1">
+
+                    <div class="c-f-header"  onclick="change_arrow_and_border(this, 'B1')">
+                        <p class="court-or-feild-name-id">Court | Field - B1</p>
+                        <p class="arrow-indicator-c-f" id="a-i-c-f-1">></p>
+                    </div>
+
+                    <div class="c-f-contents" id="c-f-contents-B1">
+
+                        <div class="status-indicator">
+                            <p><span></span>Availale</p>
+                            <p class="booked"><span></span>Booked</p>
+                            <p class="selected"><span></span>Selected</p>
+                        </div>
+
+                        <div class="time-frame">
+                            <button class="frame-title">AM</button>
+
+                            <div class="time-frame-time-slots">
+                            
+                                <div class="frame-time-slots">
+                                
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spacer"></div>
+
+                        <div class="time-frame">
+                            <button class="frame-title">PM</button>
+
+                            <div class="time-frame-time-slots">
+                            
+                                <div class="frame-time-slots">
+                                
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                       
+
+                      
+                    </div>
+                    
+
+                </div>
+
+                <div class="court-or-field" id="court-or-field-2">
+
+                    <div class="c-f-header"  onclick="change_arrow_and_border(this, 'B2')">
+                        <p class="court-or-feild-name-id">Court | Field - B2</p>
+                        <p class="arrow-indicator-c-f" id="a-i-c-f-1">></p>
+                    </div>
+
+                    <div class="c-f-contents" id="c-f-contents-B2">
+
+                        <div class="status-indicator">
+                            <p><span></span>Availale</p>
+                            <p class="booked"><span></span>Booked</p>
+                            <p class="selected"><span></span>Selected</p>
+                        </div>
+
+                        <div class="time-frame">
+                            <button class="frame-title">AM</button>
+
+                            <div class="time-frame-time-slots">
+                            
+                                <div class="frame-time-slots">
+                                
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spacer"></div>
+
+                        <div class="time-frame">
+                            <button class="frame-title">PM</button>
+
+                            <div class="time-frame-time-slots">
+                            
+                                <div class="frame-time-slots">
+                                
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                    <button class="booked">06:00 - 07:00</button>
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+
+                                <div class="frame-time-slots">
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">06:00 - 07:00</button>
+                                    <button class="available">03:03 - 03:03</button>
+                                    <button class="selected">06:00 - 07:00</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                       
+
+                      
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+            <div class="banner-container">
+                <div></div>
+                <img class="banner-img fade"  src="../img/badminton-event-banner.png" alt="metroplex banner">
+                
+                
+                
+            </div>
+
+        </div>
+
+       
+
+       
+    </section>
+
+
+
+    <footer>
+
+        <div class="footer-container">
+        
+            <div class="made-by">
+                <p>Developed by</p>
+                <img draggable="false" src="../img/bug-ranger-logo.png" alt="BugRanger Company Logo">
+            </div>
+
+            <div class="terms-privacy">
+                <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div class="company-logo">
+
+                <div class="logo">
+                    <h2>Metro<span>Plex</span></h2>
+                    <p>For everyone</p>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- After template scripts  -->
+
+    <script src="../js/search.js"></script>
+
+</body>
+
+</html>

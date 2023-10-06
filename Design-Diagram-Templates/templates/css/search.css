@@ -75,6 +75,7 @@
 .search-banner-container .banner-container img {
   transition-duration: 0.3s;
   width: 450px;
+  max-height: 450px;
   border-radius: 6px;
   border: var(--border);
   background: rgba(238, 238, 238, 0);
@@ -166,6 +167,10 @@
 @media only screen and (max-width: 900px) {
   .search-banner-container {
     display: block;
+  }
+  .banner-container img {
+    height: auto !important;
+    max-height: none !important;
   }
   .steps-to-buy {
     display: block;

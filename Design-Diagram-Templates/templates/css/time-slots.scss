@@ -1,0 +1,372 @@
+// Search bar 
+
+.search-bar{
+
+    width:100%;
+    background:var(--theme-gray);
+
+    .search-bar-container{
+        opacity: var(--opacity-1);
+        max-width: 1500px;
+        transition-duration: .3s;
+        width:80%;
+        margin:auto;
+        padding: 3em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        .search-details{
+            display: flex;
+            align-items: center;
+
+            .logo{
+                img{
+                    width:60px;
+                    border-radius: 50%;
+                    
+                }
+
+            }
+            .s-det{
+                margin-left:.5em;
+
+                p{
+                    color:var(--theme-black);
+                    font-weight: 500;
+                }
+                .s-det-title{
+                    font-weight: 500;
+                    color:var(--primary-color);
+                    font-size:var(--font-size-sub-mid)
+
+                }
+                
+            }
+        }
+
+        .prev-next-days{
+            button{
+                height:35px;
+               
+                width:100px;
+                border:none;
+                background:white;
+                color:var(--theme-black);
+                font-weight: 500;
+
+
+            }
+            .previous-day{
+                border-radius: 22px 0 0 22px;
+            }
+            .next-day{
+                border-radius: 0 22px 22px 0;
+            }
+
+            .disabled{
+                opacity: .5;
+            }
+            
+        }
+
+        .modify-search{
+        
+            height:35px;
+            padding:.5em 1em;
+            border:none;
+            border-radius: 22px;
+
+            font-weight: 500;
+            color:var(--font-color-white);
+            background:var(--primary-color);
+        }
+
+        .modify-search-form{
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p{
+                font-size: var(--font-size-normal);
+                color: var(--theme-black);
+                font-weight: 500;
+                margin-bottom: .5em;
+
+            }
+            input, .select-wrapper{
+                border: var(--border);
+                background: rgb(255, 255, 255);
+                box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.057);
+                border-radius: 4px;
+                height:35px;
+                width:100%;
+                min-width:300px;
+                
+                outline-color:black;
+                opacity: var(--opacity-1);
+
+                
+                
+                
+            }
+            input, select{
+                padding:0 .5em;
+                cursor: pointer;
+            }
+            
+            select{
+    
+                width:99%;
+                height:100%;
+                border:none;
+                outline:none;
+                border-radius: 4px;
+                opacity: var(--opacity-2);
+            }
+
+            .search-and-close{
+                .close{
+                    color:var(--primary-color);
+                    cursor: pointer;
+                    span{
+                        font-size:var(--font-size-mid);
+                    }
+                }
+                .close-2{
+                    display: none;
+                }
+
+                button{
+                    height:35px;
+                    padding:.5em 2em;
+                    border:none;
+                    border-radius: 4px;
+                    background-color: var(--primary-color);
+                    color:var(--font-color-white);
+
+                }
+
+
+            }
+
+        }
+    }
+}
+// End Search bar
+
+// Time slots container
+
+body{
+    background:var(--theme-light-gray);
+}
+
+.courts-or-fields-container{
+
+    .court-or-field{
+        overflow: hidden;
+        margin-bottom: 1em;
+        .c-f-header{
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            height:35px;
+            align-items: center;
+            background:var(--secondary-color);
+            font-weight: 500;
+            font-size:var(--font-size-normal);
+            padding:1em;
+
+            border-radius: 4px;
+            p{
+                color:var(--theme-white)
+            }
+
+
+            .arrow-indicator-c-f{
+                transition-duration: .3s;
+                transform: rotate(90deg)
+            }
+
+        }
+
+        .c-f-h-cng-class{
+            border-radius:4px 4px 0  0;
+
+            .arrow-indicator-c-f{
+                transition-duration: .3s;
+                transform: rotate(-90deg);
+            }
+        }
+
+        .c-f-contents{
+            padding:1em;
+            background:var(--theme-white);
+            position: relative;
+            
+            display: none;
+            border-radius: 0 0 4px 4px;
+
+            .status-indicator{
+                margin-bottom: 1em;
+
+                display:flex;
+                justify-content: space-between;
+
+                align-items: center;
+                p{
+                    display: flex;
+                    align-items: center;
+                    font-size:var(--font-size-small);
+                    color:var(--theme-black);
+                    font-weight: 500;
+                    span{
+                        width:15px;
+                        height:15px;
+                        display: block;
+                        border-radius: 2px;
+                        margin-right:.5em;
+                        background:var(--theme-gray);
+                        opacity: var(--opacity-2);
+                    }
+                }
+                .booked{       
+                    span{
+                        background:var(--theme-orange);  
+                    }
+                }
+                .selected{
+                    span{
+                        background:var(--primary-color)
+                    }
+                }
+            }
+
+            .time-frame{
+                .frame-title{
+                    padding:.3em;
+                    border:none;
+                    background:rgb(150, 150, 150);
+                    color: var(--theme-white);
+                    border-radius: 4px;
+                    width:80px;
+                    
+                    margin-bottom: 1em;
+                    font-size:var(--font-size-small)
+                }
+
+                .time-frame-time-slots{
+                    
+
+                    .frame-time-slots{
+                        margin-bottom: .5em;
+                        display: flex;
+                        justify-content: space-between;
+                        gap:.5em;
+
+                        button{
+                            padding:.3em .5em;
+                            border:none;
+                            border-radius: 4px;
+                            background:var(--theme-gray);
+                            width:100%;
+
+                        }
+
+                        .booked{
+                            background: var(--theme-orange);
+                            color:var(--theme-white);
+                            cursor:not-allowed;
+                            user-select: none;
+                            opacity: var(--opacity-2);
+                        }
+                        .selected{
+                            background:var(--primary-color);
+                            color:var(--theme-white);
+                            cursor:not-allowed;
+                            user-select: none;
+                            opacity: var(--opacity-2);
+                        }
+                    }
+                }
+            }
+        }
+
+        .c-f-contents-active{
+            display: block;   
+
+        }
+    }
+}
+
+// End Time slots container
+
+
+
+// Media query
+
+@media only screen and (max-width:1300px){
+    .modify-search-form {
+        input, .select-wrapper{
+            min-width:200px !important;
+        }
+    }
+}
+
+@media only screen and (max-width:1000px){
+
+    
+    .search-bar-container{
+        transition-duration: .3s;
+        width:90% !important
+    
+    }
+    
+    
+}
+
+@media only screen and (max-width:800px){
+    .modify-search-form{
+        display: block !important;
+
+        .date-input, .sport-type-input, .contract-input, .search-and-close{
+            margin-bottom: 1em;
+        }
+
+        .search-and-close{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .close-1{
+                display: none;
+
+            }
+            .close-2{
+                display: block !important;
+            }
+        }
+
+        
+    }
+    .d-none-force{
+        display: none !important;
+   }
+}
+
+
+@media only screen and (max-width:675px){
+
+    .search-bar-container{
+        display: block !important;
+
+        .toggle-close{
+            margin-bottom: 2em;
+        }
+        button.modify-search{
+            margin-bottom: 0;
+        }
+    }
+}
+// End media query

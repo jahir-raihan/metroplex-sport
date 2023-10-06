@@ -23,8 +23,11 @@
   --font-size-small: 12px;
   --font-size-extra-small: 10px;
   --font-size-tiny: 8px;
+  --theme-primary-black: #343a40;
   --primary-color: #295CAB;
+  --secondary-color: #295cabe3;
   --theme-orange: #FE9800;
+  --theme-white: white;
   --theme-gray: #E5E5E5;
   --theme-light-black-1: rgb(122, 122, 122);
   --theme-black: #555555;
@@ -198,6 +201,7 @@ header nav .nav-links .ham-menu .mobile-nav ul .active-nav {
 footer {
   width: 100%;
   border-top: 3px solid var(--primary-color);
+  background: white;
   box-shadow: 0px -2px 29px -16px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px -2px 29px -16px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px -2px 29px -16px rgba(0, 0, 0, 0.75);
@@ -227,6 +231,15 @@ footer .footer-container .company-logo .logo p {
 
 .d-none {
   display: none;
+}
+
+.d-none-force {
+  display: none !important;
+}
+
+.spacer {
+  height: 2em;
+  width: 100%;
 }
 
 .logo h2 {

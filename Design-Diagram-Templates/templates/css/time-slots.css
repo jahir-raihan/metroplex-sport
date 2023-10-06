@@ -1,0 +1,273 @@
+.search-bar {
+  width: 100%;
+  background: var(--theme-gray);
+}
+.search-bar .search-bar-container {
+  opacity: var(--opacity-1);
+  max-width: 1500px;
+  transition-duration: 0.3s;
+  width: 80%;
+  margin: auto;
+  padding: 3em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar .search-bar-container .search-details {
+  display: flex;
+  align-items: center;
+}
+.search-bar .search-bar-container .search-details .logo img {
+  width: 60px;
+  border-radius: 50%;
+}
+.search-bar .search-bar-container .search-details .s-det {
+  margin-left: 0.5em;
+}
+.search-bar .search-bar-container .search-details .s-det p {
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.search-bar .search-bar-container .search-details .s-det .s-det-title {
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: var(--font-size-sub-mid);
+}
+.search-bar .search-bar-container .prev-next-days button {
+  height: 35px;
+  width: 100px;
+  border: none;
+  background: white;
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.search-bar .search-bar-container .prev-next-days .previous-day {
+  border-radius: 22px 0 0 22px;
+}
+.search-bar .search-bar-container .prev-next-days .next-day {
+  border-radius: 0 22px 22px 0;
+}
+.search-bar .search-bar-container .prev-next-days .disabled {
+  opacity: 0.5;
+}
+.search-bar .search-bar-container .modify-search {
+  height: 35px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 22px;
+  font-weight: 500;
+  color: var(--font-color-white);
+  background: var(--primary-color);
+}
+.search-bar .search-bar-container .modify-search-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar .search-bar-container .modify-search-form p {
+  font-size: var(--font-size-normal);
+  color: var(--theme-black);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.search-bar .search-bar-container .modify-search-form input, .search-bar .search-bar-container .modify-search-form .select-wrapper {
+  border: var(--border);
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.057);
+  border-radius: 4px;
+  height: 35px;
+  width: 100%;
+  min-width: 300px;
+  outline-color: black;
+  opacity: var(--opacity-1);
+}
+.search-bar .search-bar-container .modify-search-form input, .search-bar .search-bar-container .modify-search-form select {
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+.search-bar .search-bar-container .modify-search-form select {
+  width: 99%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  opacity: var(--opacity-2);
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close .close {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close .close span {
+  font-size: var(--font-size-mid);
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close .close-2 {
+  display: none;
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close button {
+  height: 35px;
+  padding: 0.5em 2em;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: var(--font-color-white);
+}
+
+body {
+  background: var(--theme-light-gray);
+}
+
+.courts-or-fields-container .court-or-field {
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.courts-or-fields-container .court-or-field .c-f-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  align-items: center;
+  background: var(--secondary-color);
+  font-weight: 500;
+  font-size: var(--font-size-normal);
+  padding: 1em;
+  border-radius: 4px;
+}
+.courts-or-fields-container .court-or-field .c-f-header p {
+  color: var(--theme-white);
+}
+.courts-or-fields-container .court-or-field .c-f-header .arrow-indicator-c-f {
+  transition-duration: 0.3s;
+  transform: rotate(90deg);
+}
+.courts-or-fields-container .court-or-field .c-f-h-cng-class {
+  border-radius: 4px 4px 0 0;
+}
+.courts-or-fields-container .court-or-field .c-f-h-cng-class .arrow-indicator-c-f {
+  transition-duration: 0.3s;
+  transform: rotate(-90deg);
+}
+.courts-or-fields-container .court-or-field .c-f-contents {
+  padding: 1em;
+  background: var(--theme-white);
+  position: relative;
+  display: none;
+  border-radius: 0 0 4px 4px;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator p {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-small);
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator p span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 2px;
+  margin-right: 0.5em;
+  background: var(--theme-gray);
+  opacity: var(--opacity-2);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator .booked span {
+  background: var(--theme-orange);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator .selected span {
+  background: var(--primary-color);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .frame-title {
+  padding: 0.3em;
+  border: none;
+  background: rgb(150, 150, 150);
+  color: var(--theme-white);
+  border-radius: 4px;
+  width: 80px;
+  margin-bottom: 1em;
+  font-size: var(--font-size-small);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots {
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots button {
+  padding: 0.3em 0.5em;
+  border: none;
+  border-radius: 4px;
+  background: var(--theme-gray);
+  width: 100%;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .booked {
+  background: var(--theme-orange);
+  color: var(--theme-white);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: var(--opacity-2);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .selected {
+  background: var(--primary-color);
+  color: var(--theme-white);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: var(--opacity-2);
+}
+.courts-or-fields-container .court-or-field .c-f-contents-active {
+  display: block;
+}
+
+@media only screen and (max-width: 1300px) {
+  .modify-search-form input, .modify-search-form .select-wrapper {
+    min-width: 200px !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .search-bar-container {
+    transition-duration: 0.3s;
+    width: 90% !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .modify-search-form {
+    display: block !important;
+  }
+  .modify-search-form .date-input, .modify-search-form .sport-type-input, .modify-search-form .contract-input, .modify-search-form .search-and-close {
+    margin-bottom: 1em;
+  }
+  .modify-search-form .search-and-close {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modify-search-form .search-and-close .close-1 {
+    display: none;
+  }
+  .modify-search-form .search-and-close .close-2 {
+    display: block !important;
+  }
+  .d-none-force {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 675px) {
+  .search-bar-container {
+    display: block !important;
+  }
+  .search-bar-container .toggle-close {
+    margin-bottom: 2em;
+  }
+  .search-bar-container button.modify-search {
+    margin-bottom: 0;
+  }
+}/*# sourceMappingURL=time-slots.css.map */
