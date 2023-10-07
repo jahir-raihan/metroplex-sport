@@ -93,6 +93,14 @@
                 <div class="s-det">
                     <p class="s-det-title">Badmin - Hourly</p>
                     <p>08 October, 2023</p>
+
+                    <!-- Values that will be used to track selected slots data -->
+
+                    <input type="hidden" id="current-date" value="08/10/2023">
+                    <input type="hidden" id="current-sport-type" value="badminton">
+                    <input type="hidden" id="current-contract-duration" value="hourly">
+                    <input type="hidden" id="current-fare" value="1000">
+                    <!-- End hidden values -->
                 </div>
             </div>
 
@@ -268,7 +276,7 @@
                             
                                 <div class="frame-time-slots">
                                 
-                                    <button class="available">06:00 - 07:00</button>
+                                    <button onclick="add_slot(this)" class="available" id="B2-s1" data-court-id="B2" data-time="06:00 - 07:00">06:00 - 07:00</button>
                                     <button class="selected">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                     
@@ -371,11 +379,14 @@
                                             <td>1000 TK</td>
                                             <td><i class="fas fa-circle-xmark"></i></td>
                                         </tr>
+
                                         <tr>
                                             <td>08 Oct, 2023 <span>12:00 - 01:00 PM</span></td>
                                             <td>1000 TK</td>
                                             <td><i class="fas fa-circle-xmark"></i></td>
                                         </tr>
+
+                                        <tr id="B1-data-table-row"></tr>
 
                                     </table>
 
