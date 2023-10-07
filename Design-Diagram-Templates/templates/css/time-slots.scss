@@ -447,8 +447,6 @@ body{
 
         }
 
-        
-
         .total-amount{
             display: flex;
             justify-content: space-between;
@@ -456,9 +454,132 @@ body{
             background:var(--theme-gray);
             padding:.5em 1em;
             border-radius: 4px;
-            font-weight: 500;
+            font-weight: 600;
+            color:var(--primary-color);
         }
     }
+
+}
+
+.total-amount-and-payment-details{
+
+    .title, .payment-title{
+        font-weight: 500;
+        font-size: var(--font-size-regular);
+        margin-bottom: 1em;
+    }
+
+    table{
+        width:100%;
+        
+        tr{
+            
+            td{
+                font-size:var(--font-size-normal);
+                padding:1em .5em;
+                font-weight: 500;
+                span{
+                    display: block;
+                }
+                border-bottom: var(--border);
+            }
+            td:last-child{
+                text-align: center;
+                
+                i:hover{
+                    color:var(--theme-orange);
+                    cursor:pointer;
+                }
+            }
+        }
+        tr:last-child{
+            td{
+                border-bottom: none;
+            }
+        }
+        .table-head{
+            
+            
+            td{
+                background:var(--theme-gray);
+                padding:.5em;
+                font-size:var(--font-size-normal);
+                border-bottom: none;
+                color:var(--theme-black);
+                font-weight: 500;
+                  
+            }
+            td:first-child{
+                border-radius: 4px 0 0 4px;
+                width:50%;
+        
+            }
+            td:last-child{
+                border-radius: 0 4px 4px 0;
+            }
+
+        }
+
+    }
+    table, th, td{
+        border-collapse: collapse;
+    }  
+    .total-amount{
+        margin:2em 0;
+        display: flex;
+        justify-content: space-between;
+        font-size:var(--font-size-normal);
+        background:var(--theme-gray);
+        padding:.5em 1em;
+        border-radius: 4px;
+        font-weight: 600;
+        color:var(--primary-color)
+    }
+
+    .payment-method{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:1em;
+        .p-img{
+            width: 100%;
+            border:2px solid var(--theme-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1em;
+            border-radius: 4px;
+            padding:.5em;
+            height:70px;
+            cursor: pointer;
+            &:hover{
+                border:2px solid var(--primary-color);
+            }
+        }
+        
+        img{
+            
+            width:100px;
+            margin:auto;
+            display: block;
+            
+            
+        }
+        
+    }
+
+    .proceed-to-payment{
+        height:35px;
+        width:100%;
+        margin:1em 0;
+        border-radius: 4px;
+        background:var(--primary-color);
+        color:var(--theme-white);
+        font-weight: 500;
+        border:none;
+
+    }
+
 
 }
 
@@ -474,6 +595,14 @@ body{
             min-width:200px !important;
         }
     }
+}
+
+@media only screen and (max-width:1200px){
+    .selections-and-team-details{
+        
+        display: block !important;
+    }
+
 }
 
 @media only screen and (max-width:1000px){
@@ -529,5 +658,20 @@ body{
             margin-bottom: 0;
         }
     }
+}
+
+@media only screen and (max-width:400px){
+
+    .time-frame{
+        .frame-title{
+            font-size:var(--font-size-extra-small) !important;
+        }
+    }
+    .frame-time-slots{
+        button{
+            font-size:var(--font-size-extra-small);
+        }
+    }
+    
 }
 // End media query

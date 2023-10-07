@@ -342,12 +342,111 @@ body {
   background: var(--theme-gray);
   padding: 0.5em 1em;
   border-radius: 4px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.total-amount-and-payment-details .title, .total-amount-and-payment-details .payment-title {
   font-weight: 500;
+  font-size: var(--font-size-regular);
+  margin-bottom: 1em;
+}
+.total-amount-and-payment-details table {
+  width: 100%;
+}
+.total-amount-and-payment-details table tr td {
+  font-size: var(--font-size-normal);
+  padding: 1em 0.5em;
+  font-weight: 500;
+  border-bottom: var(--border);
+}
+.total-amount-and-payment-details table tr td span {
+  display: block;
+}
+.total-amount-and-payment-details table tr td:last-child {
+  text-align: center;
+}
+.total-amount-and-payment-details table tr td:last-child i:hover {
+  color: var(--theme-orange);
+  cursor: pointer;
+}
+.total-amount-and-payment-details table tr:last-child td {
+  border-bottom: none;
+}
+.total-amount-and-payment-details table .table-head td {
+  background: var(--theme-gray);
+  padding: 0.5em;
+  font-size: var(--font-size-normal);
+  border-bottom: none;
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.total-amount-and-payment-details table .table-head td:first-child {
+  border-radius: 4px 0 0 4px;
+  width: 50%;
+}
+.total-amount-and-payment-details table .table-head td:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.total-amount-and-payment-details table, .total-amount-and-payment-details th, .total-amount-and-payment-details td {
+  border-collapse: collapse;
+}
+.total-amount-and-payment-details .total-amount {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-normal);
+  background: var(--theme-gray);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.total-amount-and-payment-details .payment-method {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.total-amount-and-payment-details .payment-method .p-img {
+  width: 100%;
+  border: 2px solid var(--theme-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  padding: 0.5em;
+  height: 70px;
+  cursor: pointer;
+}
+.total-amount-and-payment-details .payment-method .p-img:hover {
+  border: 2px solid var(--primary-color);
+}
+.total-amount-and-payment-details .payment-method img {
+  width: 100px;
+  margin: auto;
+  display: block;
+}
+.total-amount-and-payment-details .proceed-to-payment {
+  height: 35px;
+  width: 100%;
+  margin: 1em 0;
+  border-radius: 4px;
+  background: var(--primary-color);
+  color: var(--theme-white);
+  font-weight: 500;
+  border: none;
 }
 
 @media only screen and (max-width: 1300px) {
   .modify-search-form input, .modify-search-form .select-wrapper {
     min-width: 200px !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .selections-and-team-details {
+    display: block !important;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -387,5 +486,13 @@ body {
   }
   .search-bar-container button.modify-search {
     margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .time-frame .frame-title {
+    font-size: var(--font-size-extra-small) !important;
+  }
+  .frame-time-slots button {
+    font-size: var(--font-size-extra-small);
   }
 }/*# sourceMappingURL=time-slots.css.map */
