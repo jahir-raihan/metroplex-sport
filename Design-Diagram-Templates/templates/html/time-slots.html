@@ -21,7 +21,7 @@
   />
     <script src="../js/index.js"></script>
     <script src="../js/jquery.js"></script>
-    <script src="../js/time-slots.js"></script>
+    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <title>Select</title>
@@ -96,7 +96,8 @@
 
                     <!-- Values that will be used to track selected slots data -->
 
-                    <input type="hidden" id="current-date" value="08/10/2023">
+                    <input type="hidden" id="current-date" value="10/08/2023">
+                    <input type="hidden" id="formatted-date" value="08 Oct, 2023">
                     <input type="hidden" id="current-sport-type" value="badminton">
                     <input type="hidden" id="current-contract-duration" value="hourly">
                     <input type="hidden" id="current-fare" value="1000">
@@ -253,7 +254,7 @@
                     
 
                 </div>
-
+   
                 <div class="court-or-field" id="court-or-field-2">
 
                     <div class="c-f-header"  onclick="change_arrow_and_border(this, 'B2')">
@@ -266,7 +267,7 @@
                         <div class="status-indicator">
                             <p><span></span>Availale</p>
                             <p class="booked"><span></span>Booked</p>
-                            <p class="selected"><span></span>Selected</p>
+                            <p class="on-process"><span></span>On Process</p>
                         </div>
 
                         <div class="time-frame">
@@ -276,21 +277,21 @@
                             
                                 <div class="frame-time-slots">
                                 
-                                    <button onclick="add_slot(this)" class="available" id="B2-s1" data-court-id="B2" data-time="06:00 - 07:00">06:00 - 07:00</button>
-                                    <button class="selected">06:00 - 07:00</button>
+                                    <button onclick="add_slot(this)" class="available" id="B2-s1" data-court-id="B2" data-time="06:00 - 07:00" data-when="AM">06:00 - 07:00</button>
+                                    <button class="on-process">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                     
                                 </div>
 
                                 <div class="frame-time-slots">
-                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="on-process">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                 
                                 </div>
 
                                 <div class="frame-time-slots">
-                                    <button class="available">06:00 - 07:00</button>
+                                    <button  onclick="add_slot(this)" class="available" id="B2-s7" data-court-id="B2" data-time="09:00 - 10:00" data-when="AM" class="available">09:00 - 10:00</button>
                                     <button class="available">06:00 - 07:00</button>
                                     <button class="available">03:03 - 03:03</button>
                                     
@@ -317,13 +318,13 @@
                                 <div class="frame-time-slots">
                                 
                                     <button class="available">06:00 - 07:00</button>
-                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="on-process">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                     
                                 </div>
 
                                 <div class="frame-time-slots">
-                                    <button class="selected">06:00 - 07:00</button>
+                                    <button class="on-process">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                 
@@ -355,38 +356,16 @@
 
                                 <div class="selected-time-slots-details">
 
-                                    <table>
+                                    <table id="data-table-B2">
                                         <tr class="header-row">
                                             <td>DateTime</td>
                                             <td>Fare</td>
                                             <td>Action</td>
                                         </tr>
 
-                                        <tr>
-                                            <td>08 Oct, 2023 <span>12:00 - 01:00 PM</span></td>
-                                            <td>1000 TK</td>
-                                            <td><i class="fas fa-circle-xmark"></i></td>
+                                        <tr id="data-table-row-B2">
+                                            <td></td>
                                         </tr>
-                                        
-                                        <tr>
-                                            <td>08 Oct, 2023 <span>12:00 - 01:00 PM</span></td>
-                                            <td>1000 TK</td>
-                                            <td><i class="fas fa-circle-xmark"></i></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>08 Oct, 2023 <span>12:00 - 01:00 PM</span></td>
-                                            <td>1000 TK</td>
-                                            <td><i class="fas fa-circle-xmark"></i></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>08 Oct, 2023 <span>12:00 - 01:00 PM</span></td>
-                                            <td>1000 TK</td>
-                                            <td><i class="fas fa-circle-xmark"></i></td>
-                                        </tr>
-
-                                        <tr id="B1-data-table-row"></tr>
 
                                     </table>
 
@@ -396,34 +375,16 @@
                             <div class="team-details">
                                 <p class="title">Team details</p>
                                 
-                                <div class="team-details-header">
+                                <div class="team-details-header" id="team-details-B2">
                                     <p class="team">Team-1 Name</p>
                                     <p class="team">Team-2 Name</p>
                                 </div>
 
-                                <div class="team-name-input">
-                                    <input type="text" placeholder="type here" id="s1-team-1-B1">
-                                    <p>VS</p>
-                                    <input type="text" placeholder="type here" id="s1-team-2-B2">
-                                </div>
+                               <div id="team-details-container-B2">
+                                    <div id="B2-teams-data"></div>
+                               </div>
 
-                                <div class="team-name-input">
-                                    <input type="text" placeholder="type here" id="s1-team-1-B1">
-                                    <p>VS</p>
-                                    <input type="text" placeholder="type here" id="s1-team-2-B2">
-                                </div>
-
-                                <div class="team-name-input">
-                                    <input type="text" placeholder="type here" id="s1-team-1-B1">
-                                    <p>VS</p>
-                                    <input type="text" placeholder="type here" id="s1-team-2-B2">
-                                </div>
-
-                                <div class="team-name-input">
-                                    <input type="text" placeholder="type here" id="s1-team-1-B1">
-                                    <p>VS</p>
-                                    <input type="text" placeholder="type here" id="s1-team-2-B2">
-                                </div>
+                                
 
                             </div>
 
@@ -449,37 +410,15 @@
                 
                 <p class="title">Summary</p>
 
-                <table>
+                <table id="summary-table">
                     <tr class="table-head">
                         <td>DateTime</td>
                         <td>Amount</td>
                     </tr>
 
-                    <tr>
+
+                    <tr id="summary-table-row">
                         <td>
-                            <span>08 Oct, 2023</span>
-                            <span>12:00 - 01:00 AM</span>
-
-                        </td>
-
-                        <td>
-                            
-                            1000 TK
-
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <span>08 Oct, 2023</span>
-                            <span>12:00 - 01:00 AM</span>
-
-                        </td>
-
-                        <td>
-                            
-                            1000 TK
-
                         </td>
                     </tr>
 
@@ -487,7 +426,7 @@
 
                 <div class="total-amount">
                     <div></div>
-                    <p>Total : 2000 TK</p>
+                    <p>Total : <span id="summary-total">0</span> TK</p>
                 </div>
 
                 <p class="payment-title">Payment method</p>
@@ -504,7 +443,7 @@
                     
                 </div>
 
-                <button class="proceed-to-payment">Proceed to payment >></button>
+                <button class="proceed-to-payment disabled" disabled>Proceed to payment >></button>
             </div>
 
         </div>
@@ -544,7 +483,7 @@
     </footer>
 
     <!-- After template scripts  -->
-
+    <script src="../js/time-slots.js"></script>
     <script src="../js/search.js"></script>
 
 </body>

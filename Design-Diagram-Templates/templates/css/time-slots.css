@@ -179,8 +179,8 @@ body {
 .courts-or-fields-container .court-or-field .c-f-contents .status-indicator .booked span {
   background: var(--theme-orange);
 }
-.courts-or-fields-container .court-or-field .c-f-contents .status-indicator .selected span {
-  background: var(--primary-color);
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator .on-process span {
+  background: var(--theme-black);
 }
 .courts-or-fields-container .court-or-field .c-f-contents .time-frame .frame-title {
   padding: 0.3em;
@@ -212,16 +212,20 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  opacity: var(--opacity-2);
+  opacity: var(--opacity-3);
 }
-.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .selected {
-  background: var(--primary-color);
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .on-process {
+  background: var(--theme-black);
   color: var(--theme-white);
   cursor: not-allowed;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  opacity: var(--opacity-2);
+  opacity: var(--opacity-3);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .selected {
+  background: var(--secondary-color);
+  color: var(--theme-white);
 }
 .courts-or-fields-container .court-or-field .c-f-contents-active {
   display: block;

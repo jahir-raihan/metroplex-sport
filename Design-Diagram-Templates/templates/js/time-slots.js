@@ -27,22 +27,22 @@ const change_arrow_and_border = (ele, id) => {
 // Selected time slots - payment method - team info
 
 let selected_slot_datas = {
-    // Skeleton view 
-    'Date_SportType_CourtId_ContractDuration': {
-        date: 'Date',
-        court_id: 'courtId',
-        contract_duration: 'contract_duration',
-        sport_type: 'sport_type',
-        total_fare: 0,
-        time_slots_and_teams: {
-            slotid: {
-                time: 'time',
-                team1: 'team1',
-                team2: 'team2'
-            }
-        }
+    //* Skeleton view 
+    // 'Date_SportType_CourtId_ContractDuration': {
+    //     date: 'Date',
+    //     court_id: 'courtId',
+    //     contract_duration: 'contract_duration',
+    //     sport_type: 'sport_type',
+    //     total_fare: 0,
+    //     time_slots_and_teams: {
+    //         slotid: {
+    //             time: 'time',
+    //             team1: 'team1',
+    //             team2: 'team2'
+    //         }
+    //     }
 
-    }
+    // }
     // End Skeleton view
 }
 let count_selected_slots = 0;
@@ -95,7 +95,7 @@ function add_slot_data(data_id, slot){
 
     if (!already_there){
         slot_parent.time_slots_and_teams[slot.id] = {
-            time: slot.getAttribute('data-time'),
+            time: slot.getAttribute('data-time') + ' ' + slot.getAttribute('data-when'),
             team1: '',
             team2: ''
         }
@@ -111,11 +111,84 @@ function add_slot_data(data_id, slot){
 
 // Update data listings 
 
-function update_data_listings(){
+function update_data_listings(data_id, slot){
+    let slot_parent = selected_slot_datas[data_id]
+
+    $('#data-table-'+slot.getAttribute('data-court-id')).html(` <tr class="header-row"><td>DateTime</td><td>Fare</td><td>Action</td>
+                                                                </tr><tr id="data-table-row-B2"> <td></td></tr>`)
+
+    $('#team-details-container-'+slot_parent.court_id).html(`<div id="${slot_parent.court_id}-teams-data"></div>`)
     
+    if (slot_parent.total_fare > 0){
+        $('#selections-and-team-details-'+slot.getAttribute('data-court-id')).removeClass('d-none-force');
+        
+        let date = slot_parent.formatted_date;
+
+        for (slot in slot_parent.time_slots_and_teams){
+
+            let cur_slot = slot_parent.time_slots_and_teams[slot]
+
+            let new_row = ` <tr id="data-row-${slot}">
+                        <td>${date} <span>${cur_slot.time}</span></td>
+                        <td>${slot_parent.fare_rate} TK</td>
+                        <td onclick="remove_slot('${slot}')"><i class="fas fa-circle-xmark"></i></td>
+                    </tr>`
+            $('#data-table-row-'+slot_parent.court_id).before(new_row);
+
+            let team_data = `<div class="team-name-input">
+                                <input type="text" placeholder="type here" value="${cur_slot.team1}"  data-team="1" data-slot-id="${slot}" data-court-id="${slot_parent.court_id}" id="${slot}-team-1">
+                                <p>VS</p>
+                                <input type="text" placeholder="type here" value="${cur_slot.team2}" data-team="2" data-slot-id="${slot}" data-court-id="${slot_parent.court_id}" id="${slot}-team-2">
+                            </div>`
+            
+            $('#'+slot_parent.court_id+'-teams-data').before(team_data)
+
+        }
+        
+        
+       
+    }
+
 }
 
 // End Update data listings
+
+
+// Update summary data
+
+function update_summary_data(){
+    
+    let summary_total = $('#summary-total')
+
+    $('#summary-table').html(`<tr class="table-head"><td>DateTime</td><td>Amount</td></tr>
+                              <tr id="summary-table-row"> <td></td></tr>`)
+    let summary_table = $('#summary-table-row')
+
+    for (data_id in selected_slot_datas){
+        let slot_parent = selected_slot_datas[data_id]
+        let slots = selected_slot_datas[data_id].time_slots_and_teams
+        let total = 0;
+
+        for (slot in slots){
+            let row = `<tr>
+                            <td>
+                                <span>${slot_parent.formatted_date}</span>
+                                <span>${slots[slot].time}</span>
+                            </td>
+                            <td>
+                                ${slot_parent.fare_rate} TK
+                            </td>
+                        </tr>`
+            total += Number(slot_parent.fare_rate)
+            summary_table.before(row);
+            summary_total.html(`${total}`)
+
+        }
+        
+    }
+}
+
+// End Update summary data
 
 
 // Add slot function
@@ -124,12 +197,12 @@ function add_slot(slot){
 
     // Check for availablity
 
-    let availablity = check_slot_avilability(slot);
-    if (! availablity.status){
-        slot.disabled = true;
-        slot.classList.add(availablity.classname)
-        return;
-    }
+    // let availablity = check_slot_avilability(slot);
+    // if (! availablity.status){
+    //     slot.disabled = true;
+    //     slot.classList.add(availablity.classname)
+    //     return;
+    // }
 
     // End Check for availabilty
 
@@ -151,19 +224,22 @@ function add_slot(slot){
 
         selected_slot_datas[data_id] = {
             date: current_date,
+            formatted_date: $('#formatted-date').val(),
             court_id: slot.getAttribute('data-court-id'),
             contract_duration: current_contract_duration,
             sport_type: current_sport_type,
             total_fare: current_fare,
+            fare_rate : current_fare,
             time_slots_and_teams: {
-                slotid: {
-                    time: slot.getAttribute('data-time'),
-                    team1: '',
-                    team2: ''
-                }
             }
         
         }
+        selected_slot_datas[data_id].time_slots_and_teams[slot.id] = {
+            time: slot.getAttribute('data-time') + ' ' + slot.getAttribute('data-when'),
+            team1: '',
+            team2: ''
+        }
+
         slot.disabled = true;
         slot.classList.add('selected')
 
@@ -174,7 +250,7 @@ function add_slot(slot){
 
     // Update data listings and summary
 
-    update_data_listings();
+    update_data_listings(data_id, slot);
     update_summary_data();
 
     // End Update data listings and summary

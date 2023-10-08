@@ -1,10 +1,10 @@
 // Set min and max date in date picker
-let current_date = new Date();
+
 
 $( function() {
     $( "#date" ).datepicker({
         dateFormat: "dd MM, yy",
-        minDate: current_date,
+        minDate: new Date(),
         maxDate: "+1m +1w",
         
     });

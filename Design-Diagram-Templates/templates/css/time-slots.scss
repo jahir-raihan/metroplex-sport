@@ -237,11 +237,12 @@ body{
                         background:var(--theme-orange);  
                     }
                 }
-                .selected{
+                .on-process{
                     span{
-                        background:var(--primary-color)
+                        background:var(--theme-black)
                     }
                 }
+                
             }
 
             .time-frame{
@@ -280,14 +281,19 @@ body{
                             color:var(--theme-white);
                             cursor:not-allowed;
                             user-select: none;
-                            opacity: var(--opacity-2);
+                            opacity: var(--opacity-3);
                         }
-                        .selected{
-                            background:var(--primary-color);
+                        .on-process{
+                            background:var(--theme-black);
                             color:var(--theme-white);
                             cursor:not-allowed;
                             user-select: none;
-                            opacity: var(--opacity-2);
+                            opacity: var(--opacity-3);
+                        }
+                        .selected{
+                            background:var(--secondary-color);
+                            color:var(--theme-white);
+                            
                         }
                     }
                 }

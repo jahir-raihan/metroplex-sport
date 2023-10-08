@@ -318,6 +318,14 @@ footer{
         }
     }
 }
+
+.disabled{
+    opacity: var(--opacity-3);
+    background: var(--theme-gray);
+    color:var(--theme-white);
+    user-select: none;
+    cursor:not-allowed;
+}
 // End Global classes
 
 // Default style changes
