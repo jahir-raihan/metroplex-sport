@@ -170,91 +170,6 @@
 
             <div class="courts-or-fields-container">
                 
-                <div class="court-or-field" id="court-or-field-1">
-
-                    <div class="c-f-header"  onclick="change_arrow_and_border(this, 'B1')">
-                        <p class="court-or-feild-name-id">Court | Field - B1</p>
-                        <p class="arrow-indicator-c-f" id="a-i-c-f-1">></p>
-                    </div>
-
-                    <div class="c-f-contents" id="c-f-contents-B1">
-
-                        <div class="status-indicator">
-                            <p><span></span>Availale</p>
-                            <p class="booked"><span></span>Booked</p>
-                            <p class="selected"><span></span>Selected</p>
-                        </div>
-
-                        <div class="time-frame">
-                            <button class="frame-title">AM</button>
-
-                            <div class="time-frame-time-slots">
-                            
-                                <div class="frame-time-slots">
-                                
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="selected">06:00 - 07:00</button>
-                                    <button class="booked">06:00 - 07:00</button>
-                                    <button class="booked">06:00 - 07:00</button>
-                                </div>
-
-                                <div class="frame-time-slots">
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">03:03 - 03:03</button>
-                                    <button class="selected">06:00 - 07:00</button>
-                                    
-                                </div>
-
-                                <div class="frame-time-slots">
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">03:03 - 03:03</button>
-                                    <button class="selected">06:00 - 07:00</button>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="spacer"></div>
-
-                        <div class="time-frame">
-                            <button class="frame-title">PM</button>
-
-                            <div class="time-frame-time-slots">
-                            
-                                <div class="frame-time-slots">
-                                
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="selected">06:00 - 07:00</button>
-                                    <button class="booked">06:00 - 07:00</button>
-                                    <button class="booked">06:00 - 07:00</button>
-                                </div>
-
-                                <div class="frame-time-slots">
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">03:03 - 03:03</button>
-                                    <button class="selected">06:00 - 07:00</button>
-                                    
-                                </div>
-
-                                <div class="frame-time-slots">
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">06:00 - 07:00</button>
-                                    <button class="available">03:03 - 03:03</button>
-                                    <button class="selected">06:00 - 07:00</button>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
- 
-                    </div>
-                    
-
-                </div>
-   
                 <div class="court-or-field" id="court-or-field-2">
 
                     <div class="c-f-header"  onclick="change_arrow_and_border(this, 'B2')">
@@ -277,7 +192,7 @@
                             
                                 <div class="frame-time-slots">
                                 
-                                    <button onclick="add_slot(this)" class="available" id="B2-s1" data-court-id="B2" data-time="06:00 - 07:00" data-when="AM">06:00 - 07:00</button>
+                                    <button onclick="renderer.add_slot(this)" class="available" id="B2-s1" data-court-id="B2" data-time="06:00 - 07:00" data-when="AM">06:00 - 07:00</button>
                                     <button class="on-process">06:00 - 07:00</button>
                                     <button class="booked">06:00 - 07:00</button>
                                     
@@ -291,7 +206,7 @@
                                 </div>
 
                                 <div class="frame-time-slots">
-                                    <button  onclick="add_slot(this)" class="available" id="B2-s7" data-court-id="B2" data-time="09:00 - 10:00" data-when="AM" class="available">09:00 - 10:00</button>
+                                    <button  onclick="renderer.add_slot(this)" class="available" id="B2-s7" data-court-id="B2" data-time="09:00 - 10:00" data-when="AM" class="available">09:00 - 10:00</button>
                                     <button class="available">06:00 - 07:00</button>
                                     <button class="available">03:03 - 03:03</button>
                                     
@@ -440,7 +355,7 @@
                         <img src="../img/sslcom-logo.png" alt="SSLCom logo" class="sslcom">
                     </div>
                     
-                    
+
                 </div>
 
                 <button class="proceed-to-payment disabled" disabled>Proceed to payment >></button>
@@ -448,9 +363,7 @@
 
         </div>
 
-       
 
-       
     </section>
 
 
