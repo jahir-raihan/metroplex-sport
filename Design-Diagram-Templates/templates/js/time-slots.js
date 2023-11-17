@@ -84,6 +84,12 @@ class Renderer{
             
             total += Number(slot_parent.total_fare)
             for (let slot in slots){
+
+                if (this.is_expired(slot)){
+                    this.remove_slot(slot);
+                    continue;
+                }
+
                 this.render_selected_slot(data_id, slot_parent.court_id)
                 let row = `<tr>
                                 <td>
@@ -129,7 +135,7 @@ class Renderer{
                 let new_row = ` <tr id="data-row-${slot}">
                             <td>${date} <span>${cur_slot.time} ${cur_slot.when}</span></td>
                             <td>${slot_parent.fare_rate} TK</td>
-                            <td onclick="remove_slot('${slot}')"><i class="fas fa-circle-xmark"></i></td>
+                            <td onclick="renderer.remove_slot('${slot}')"><i class="fas fa-circle-xmark"></i></td>
                         </tr>`
                 $('#data-table-row-'+slot_parent.court_id).before(new_row);
 
@@ -149,11 +155,11 @@ class Renderer{
     }
 
     is_expired(slot){
-    
+        console.log("Is expired")
     }
 
     remove_slot(slot){
-    
+        console.log("Remove slot")
     }
 
     get_formatted_time(){
