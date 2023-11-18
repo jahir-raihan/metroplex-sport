@@ -85,7 +85,7 @@ class Renderer{
             total += Number(slot_parent.total_fare)
             for (let slot in slots){
 
-                if (this.is_expired(slot)){
+                if (this.is_expired(slots[slot])){
                     this.remove_slot(slot);
                     continue;
                 }
@@ -102,7 +102,6 @@ class Renderer{
                             </tr>`
                 
                 summary_table.before(row);
-                
 
             }
             
@@ -148,25 +147,61 @@ class Renderer{
                 $('#'+slot_parent.court_id+'-teams-data').before(team_data)
 
             }
-            
-            
-        
+
         }
     }
 
+    getDifferenceInMinutes(date1, date2) {
+
+        /* Returns minutes difference of two given datetimes */
+
+        // Convert dates to milliseconds
+        const time1 = date1.getTime();
+        const time2 = date2.getTime();
+      
+        // Calculate the difference in milliseconds
+        const timeDifference = time2 - time1;
+      
+        // Convert milliseconds to minutes
+        const minutesDifference = timeDifference / (1000 * 60);
+      
+        // Round to the nearest whole minute
+        const roundedMinutesDifference = Math.round(minutesDifference);
+      
+        // Return the difference in minutes
+        return roundedMinutesDifference;
+      }
+
     is_expired(slot){
-        console.log("Is expired")
+        /* Returns True if the seat is expierd else False */
+
+        // Slot selection date
+        const date1 = new Date(slot.add_time);
+
+        // Current date
+        const date2 = new Date(this.get_formatted_time(this.current_date));
+        
+        // Calculating minutes difference using helper function.
+        const minutesDifference = this.getDifferenceInMinutes(date1, date2);
+
+        return !minutesDifference <= 5;
+
     }
 
-    remove_slot(slot){
+    remove_slot(key, court_id, slot){
+
+        // Remove a selected slot if it is expiered or remove function is called.
         console.log("Remove slot")
     }
 
-    get_formatted_time(){
-        let time = `${this.current_date.getHours()}:${this.current_date.getMinutes()}:${this.current_date.getSeconds()}`
-        let date = `${this.current_date.getDate()}/${this.current_date.getMonth()}/${this.current_date.getFullYear()}`
+    get_formatted_time(date){
 
-        return `${date} ${time}`
+        /* Get formatted datetime string for Date object creating */
+
+        let time_string = `${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}:${String(date.getSeconds()).padStart(2, '0')}`
+        let date_string = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+
+        return `${date_string}T${time_string}`
     }
 
     add_slot(slot){
@@ -202,7 +237,7 @@ class Renderer{
         if (is_avialable && !this.slot_exist(slot, data, key)){
         
             data['time_slots_and_teams'][`${slot.getAttribute('id')}`] = {
-                add_time: this.get_formatted_time(),
+                add_time: this.get_formatted_time(this.current_date),
                 time: slot.getAttribute('data-time'),
                 when: slot.getAttribute('data-when'),
                 team1: 'Red',
