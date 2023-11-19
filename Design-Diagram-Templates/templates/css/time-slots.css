@@ -452,6 +452,9 @@ body {
   .selections-and-team-details {
     display: block !important;
   }
+  .d-none-force {
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .search-bar-container {

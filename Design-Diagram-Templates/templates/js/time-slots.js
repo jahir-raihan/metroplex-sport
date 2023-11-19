@@ -82,11 +82,12 @@ class Renderer{
             let slot_parent = this.storage[data_id]
             let slots = this.storage[data_id].time_slots_and_teams
             
-            total += Number(slot_parent.total_fare)
+            total += slot_parent.total_fare
             for (let slot in slots){
 
                 if (this.is_expired(slots[slot])){
                     this.remove_slot(slots, slot);
+                    total -= slot_parent.fare_rate;
                     continue;
                 }
 
@@ -94,7 +95,7 @@ class Renderer{
                 let row = `<tr>
                                 <td>
                                     <span>${slot_parent.formatted_date}</span>
-                                    <span>${slots[slot].time}</span>
+                                    <span>${slots[slot].time} ${slots[slot].when}</span>
                                 </td>
                                 <td>
                                     ${slot_parent.fare_rate} TK
@@ -104,8 +105,17 @@ class Renderer{
                 summary_table.before(row);
 
             }
+            $("#"+slot_parent.court_id+'-sub-total').html(String(slot_parent.total_fare))
+
+            if (slot_parent.total_fare == 0){
+                console.log("came here")
+                $('#selections-and-team-details-'+slot_parent.court_id).addClass('d-none-force');
+            }
+
             
         }
+        
+       
         summary_total.html(`${total}`)
     }
 
@@ -132,23 +142,25 @@ class Renderer{
                 $('#'+slot).addClass('selected')
 
                 let new_row = ` <tr id="data-row-${slot}">
-                            <td>${date} <span>${cur_slot.time} ${cur_slot.when}</span></td>
-                            <td>${slot_parent.fare_rate} TK</td>
-                            <td onclick="renderer.remove_slot('${slot}')"><i class="fas fa-circle-xmark"></i></td>
-                        </tr>`
+                                    <td>${date} <span>${cur_slot.time} ${cur_slot.when}</span></td>
+                                    <td>${slot_parent.fare_rate} TK</td>
+                                    <td onclick="renderer.action_remover('${slot}', '${key}')"><i class="fas fa-circle-xmark"></i></td>
+                                </tr>`
                 $('#data-table-row-'+slot_parent.court_id).before(new_row);
 
-                let team_data = `<div class="team-name-input">
+                let team_data = `<div class="team-name-input" id="${slot}-team-name-input">
                                     <input type="text" placeholder="type here" value="${cur_slot.team1}"  data-team="1" data-slot-id="${slot}" data-court-id="${slot_parent.court_id}" id="${slot}-team-1">
                                     <p>VS</p>
                                     <input type="text" placeholder="type here" value="${cur_slot.team2}" data-team="2" data-slot-id="${slot}" data-court-id="${slot_parent.court_id}" id="${slot}-team-2">
-                                </div>`
+                                 </div>`
                 
                 $('#'+slot_parent.court_id+'-teams-data').before(team_data)
 
             }
 
         }
+    
+
     }
 
     getDifferenceInMinutes(date1, date2) {
@@ -170,7 +182,7 @@ class Renderer{
       
         // Return the difference in minutes
         return roundedMinutesDifference;
-      }
+    }
 
     is_expired(slot){
         /* Returns True if the seat is expierd else False */
@@ -188,12 +200,24 @@ class Renderer{
 
     }
 
+    action_remover(slot, key){
+        let slots = this.storage[key]['time_slots_and_teams'];
+        this.storage[key].total_fare -= this.storage[key].fare_rate;
+        this.remove_slot(slots, slot);
+
+        $('#data-row-'+slot).remove();
+        $('#'+slot+'-team-name-input').remove();
+        // $('#'+$('#'+slot).getAttribute('data-court-id')+'-sub-total') = this.storage[key].total_fare
+    }
+
     remove_slot(slots, slot){
 
         // Remove a selected slot if it is expiered or remove function is called.
         
         delete slots[slot];
-        this.update_ls_data()
+        $('#'+slot).removeClass('selected')
+        this.update_ls_data();
+        this.render_summary();
         
     }
 
@@ -229,7 +253,7 @@ class Renderer{
                 contract_duration: this.contract_duration,
                 sport_type: this.sport_type,
                 total_fare: 0,
-                fare_rate: this.fare,
+                fare_rate: Number(this.fare),
                 time_slots_and_teams: {}
 
             }
@@ -292,6 +316,5 @@ class Renderer{
 let renderer = new Renderer();
 renderer.get_ls_data();
 renderer.update_ls_data();
-
 
 renderer.render_summary()
