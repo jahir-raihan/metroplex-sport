@@ -86,7 +86,7 @@ class Renderer{
             for (let slot in slots){
 
                 if (this.is_expired(slots[slot])){
-                    this.remove_slot(slot);
+                    this.remove_slot(slots, slot);
                     continue;
                 }
 
@@ -184,14 +184,17 @@ class Renderer{
         // Calculating minutes difference using helper function.
         const minutesDifference = this.getDifferenceInMinutes(date1, date2);
 
-        return !minutesDifference <= 5;
+        return minutesDifference >= 5;
 
     }
 
-    remove_slot(key, court_id, slot){
+    remove_slot(slots, slot){
 
         // Remove a selected slot if it is expiered or remove function is called.
-        console.log("Remove slot")
+        
+        delete slots[slot];
+        this.update_ls_data()
+        
     }
 
     get_formatted_time(date){
@@ -212,11 +215,12 @@ class Renderer{
 
         let key = `${this.searched_date}_${this.sport_type}_${slot.getAttribute('data-court-id')}_${this.contract_duration}`
         
-        let data = null;
+        let data = {};
 
         // If key is not in local storage then create a new skelteton for that key.
         if (key in this.storage){
             data = this.storage[key]
+            
         } else {
             data = {
                 date: this.searched_date,
@@ -235,23 +239,27 @@ class Renderer{
         let is_avialable = this.check_availablity(slot, data);
 
         if (is_avialable && !this.slot_exist(slot, data, key)){
-        
-            data['time_slots_and_teams'][`${slot.getAttribute('id')}`] = {
+            
+            
+            data['time_slots_and_teams'][`${slot.getAttribute('id')}`]  = {
                 add_time: this.get_formatted_time(this.current_date),
                 time: slot.getAttribute('data-time'),
                 when: slot.getAttribute('data-when'),
                 team1: 'Red',
                 team2: 'Blue'
             }
+
             data['total_fare'] += Number(this.fare)
             $(`#${slot.getAttribute('id')}`).addClass('selected');
+           
         }
 
         this.storage[key] = data;
-
         // Update everything.
+        
         this.update_ls_data();
         this.render_summary();
+        
 
 
     }
@@ -260,7 +268,6 @@ class Renderer{
         /* Check, if the selected slot is already in localstorage */
         if (key in this.storage &&
             slot.getAttribute('id') in this.storage[key]['time_slots_and_teams']) {
-            console.log("slot exists")
             return true;
         }
         return false;
