@@ -1,29 +1,4 @@
-// disable enable modiy search section
-
-const toggle_close = () => {
-    document.getElementById('modify-search-form').classList.toggle('d-none-force')
-
-    let elements = document.querySelectorAll('.toggle-close');
-    elements.forEach( (ele) => {
-        ele.classList.toggle('d-none-force')
-    })
-}
-// end disable enable modify search section
-
-
-// show hide time slots for a field with updated data
-
-const change_arrow_and_border = (ele, id) => {
-    ele.classList.toggle('c-f-h-cng-class')
-    $('#c-f-contents-'+id).slideToggle()
-}
-
-// end show hide time slots for a field with updated data
-
-
-
 // Selected time slots - payment method - team info
-
 
 let count_selected_slots = 0;
 let current_sport_type = null;
@@ -37,10 +12,12 @@ let current_fare = null;
 
 // Class based approach
 
+// Renderer Class to handle all kind of logics of slot selection process.
 
 class Renderer{
 
     constructor(){
+        
         this.storage = null;
         this.current_date = new Date();
         this.searched_date = $('#current-date').val();
@@ -48,6 +25,14 @@ class Renderer{
         this.fare = $('#current-fare').val();
         this.sport_type = $('#current-sport-type').val();
         this.formatted_date = $('#formatted-date').val();
+        this.utils = new Utility();
+
+
+        // Initial call
+
+        this.get_ls_data();
+        this.update_ls_data();
+        this.render_summary()
     }
 
     get_ls_data(){
@@ -72,9 +57,7 @@ class Renderer{
     render_summary(){
         let summary_total = $('#summary-total')
 
-        $('#summary-table').html = ''
-        $('#summary-table').html(`<tr class="table-head"><td>DateTime</td><td>Amount</td></tr>
-                                <tr id="summary-table-row"> <td></td></tr>`)
+        this.utils.create_summary_table_skeleton()
         let summary_table = $('#summary-table-row')
         
         let total = 0;
@@ -92,30 +75,18 @@ class Renderer{
                 }
 
                 this.render_selected_slot(data_id, slot_parent.court_id)
-                let row = `<tr>
-                                <td>
-                                    <span>${slot_parent.formatted_date}</span>
-                                    <span>${slots[slot].time} ${slots[slot].when}</span>
-                                </td>
-                                <td>
-                                    ${slot_parent.fare_rate} TK
-                                </td>
-                            </tr>`
-                
+                let row = this.utils.create_summary_data_row(slot_parent, slots, slot)
                 summary_table.before(row);
 
             }
             $("#"+slot_parent.court_id+'-sub-total').html(String(slot_parent.total_fare))
 
             if (slot_parent.total_fare == 0){
-                console.log("came here")
                 $('#selections-and-team-details-'+slot_parent.court_id).addClass('d-none-force');
             }
-
-            
+   
         }
         
-       
         summary_total.html(`${total}`)
     }
 
@@ -126,9 +97,8 @@ class Renderer{
 
         let slot_parent = this.storage[key]
 
-        $('#data-table-'+court_id).html(` <tr class="header-row"><td>DateTime</td><td>Fare</td><td>Action</td>
-                                                                    </tr><tr id="data-table-row-B2"> <td></td></tr>`)
-
+        this.utils.create_data_table_skeleton(court_id)
+                                                 
         $('#team-details-container-'+slot_parent.court_id).html(`<div id="${slot_parent.court_id}-teams-data"></div>`)
         
         if (slot_parent.total_fare > 0){
@@ -141,47 +111,14 @@ class Renderer{
                 let cur_slot = slot_parent.time_slots_and_teams[slot]
                 $('#'+slot).addClass('selected')
 
-                let new_row = ` <tr id="data-row-${slot}">
-                                    <td>${date} <span>${cur_slot.time} ${cur_slot.when}</span></td>
-                                    <td>${slot_parent.fare_rate} TK</td>
-                                    <td onclick="renderer.action_remover('${slot}', '${key}')"><i class="fas fa-circle-xmark"></i></td>
-                                </tr>`
+                let new_row = this.utils.create_selected_slot_data_row(slot_parent, slot, cur_slot, key, date);
                 $('#data-table-row-'+slot_parent.court_id).before(new_row);
 
-                let team_data = `<div class="team-name-input" id="${slot}-team-name-input">
-                                    <input type="text" placeholder="type here" value="${cur_slot.team1}"  data-team="1" data-slot-id="${slot}" data-court-id="${slot_parent.court_id}" id="${slot}-team-1">
-                                    <p>VS</p>
-                                    <input type="text" placeholder="type here" value="${cur_slot.team2}" data-team="2" data-slot-id="${slot}" data-court-id="${slot_parent.court_id}" id="${slot}-team-2">
-                                 </div>`
-                
+                let team_data = this.utils.create_team_data_input_row(slot_parent, slot, cur_slot);
                 $('#'+slot_parent.court_id+'-teams-data').before(team_data)
 
             }
-
         }
-    
-
-    }
-
-    getDifferenceInMinutes(date1, date2) {
-
-        /* Returns minutes difference of two given datetimes */
-
-        // Convert dates to milliseconds
-        const time1 = date1.getTime();
-        const time2 = date2.getTime();
-      
-        // Calculate the difference in milliseconds
-        const timeDifference = time2 - time1;
-      
-        // Convert milliseconds to minutes
-        const minutesDifference = timeDifference / (1000 * 60);
-      
-        // Round to the nearest whole minute
-        const roundedMinutesDifference = Math.round(minutesDifference);
-      
-        // Return the difference in minutes
-        return roundedMinutesDifference;
     }
 
     is_expired(slot){
@@ -194,7 +131,7 @@ class Renderer{
         const date2 = new Date(this.get_formatted_time(this.current_date));
         
         // Calculating minutes difference using helper function.
-        const minutesDifference = this.getDifferenceInMinutes(date1, date2);
+        const minutesDifference = this.utils.get_difference_in_minutes(date1, date2);
 
         return minutesDifference >= 5;
 
@@ -246,17 +183,8 @@ class Renderer{
             data = this.storage[key]
             
         } else {
-            data = {
-                date: this.searched_date,
-                formatted_date: this.formatted_date,
-                court_id: slot.getAttribute('data-court-id'),
-                contract_duration: this.contract_duration,
-                sport_type: this.sport_type,
-                total_fare: 0,
-                fare_rate: Number(this.fare),
-                time_slots_and_teams: {}
-
-            }
+            data = this.utils.create_local_storage_key_pair_data_skeleton(this, slot)
+            
         }
 
         // If the slot is available and does not exist already in localstorage then add it.
@@ -264,14 +192,7 @@ class Renderer{
 
         if (is_avialable && !this.slot_exist(slot, data, key)){
             
-            
-            data['time_slots_and_teams'][`${slot.getAttribute('id')}`]  = {
-                add_time: this.get_formatted_time(this.current_date),
-                time: slot.getAttribute('data-time'),
-                when: slot.getAttribute('data-when'),
-                team1: 'Red',
-                team2: 'Blue'
-            }
+            data['time_slots_and_teams'][`${slot.getAttribute('id')}`]  = this.utils.add_time_slot_skeleton(this, slot)
 
             data['total_fare'] += Number(this.fare)
             $(`#${slot.getAttribute('id')}`).addClass('selected');
@@ -310,11 +231,8 @@ class Renderer{
     
     }
 
-
 }
 
 let renderer = new Renderer();
-renderer.get_ls_data();
-renderer.update_ls_data();
 
-renderer.render_summary()
+// For accessibility purpose as JS modules can't be called from HTML
