@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="metroplex">
+    <meta name="description" content="Metroplex is a well known sporting club  held in Dhaka bangladesh, People around 
+    Dhaka playes different types of sport out there, like Badminton, Cricket, Football. Even there is a place for swimming
+    too.">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/search.css">
+    
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/booking-history.css">
+    <link rel="shortcut icon" href="../img/logo-small.png" type="image/x-icon">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <script src="../js/index.js"></script>
+    <script src="../js/jquery.js"></script>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Booking History</title>
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <h2>Metro<span>Plex</span></h2>
+            </div>
+
+            <div class="nav-links">
+
+                <ul class="desktop-nav-links">
+                    <li class="" id="home-link"><i class="fa fa-house"></i> Home</li>
+                    <li class="" id="search-link"><i class="fa fa-magnifying-glass"></i> Search</li>
+                    <li id="upcoming-events-link"><i class="fa fa-hourglass-start"></i> Upcoming matches</li>
+                    <li id="about-us-link"><i class="fa fa-circle-info"></i> About us</li>
+
+                </ul>
+
+                <button class="login-btn"><i class="fa fa-arrow-right-to-bracket"></i>  Login</button>
+
+                <div class="ham-menu" onclick="toggle_nav()">
+
+                    <div class="" id="nav-ham">
+                        <div class="b1"></div>
+                        <div class="b2"></div>
+                        <div class="b1"></div>
+                    </div>
+
+                    <div class="d-none" id="nav-ham-cross">
+                        <div class="c-b1"></div>
+                        <div class="c-b2"></div>
+                    </div>
+
+                    <div class="mobile-nav d-none" id="mobile-nav">
+
+                        <ul>
+                            <li onclick="mobile_nav_click_check(this)" class="" id="home-link"><i class="fa fa-house"></i> Home</li>
+                            <li onclick="mobile_nav_click_check(this)" class="" id="search-link"><i class="fa fa-magnifying-glass"></i> Search</li>
+                            <li onclick="mobile_nav_click_check(this)" id="upcoming-events-link"><i class="fa fa-hourglass-start"></i> Upcoming matches</li>
+                            <li onclick="mobile_nav_click_check(this)" id="about-us-link"><i class="fa fa-circle-info"></i> About us</li>
+                            <li onclick="mobile_nav_click_check(this)" id="login-link"><i class="fa fa-arrow-right-to-bracket"></i> Login</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section class="search-bar-booking-history-upcoming-matches w-4/5 max-w-[1500px] m-auto">
+
+        <form id="search-bar-booking-history-upcoming-matches" class="flex">
+            <input type="text" class="" placeholder="Search by anything">
+            <button class="" type="submit">
+                Search 
+                <span id="search-loader"></span>
+            </button>
+        </form>
+    </section>
+
+    <p class="message w-4/5 m-auto max-w-[1500px] text-orange-500">! Read something important</p>
+
+    <section class="container w-4/5 booking-history max-w-[1500px]" id="container">
+
+        <div class="booking-history-container w-full my-10">
+
+            <div class="booking flex justify-between items-center w-full bg-gradient-to-l from-cyan-600 to-[#295CAB] p-4 rounded-xl my-4">
+                <div class="flex items-center">
+
+                    <div class="searial w-14 h-14 border bg-[#42c99f] rounded-[50%] flex justify-center items-center mr-2">
+
+                        <div class="border-white border-2 h-12 w-12 rounded-[50%] flex justify-center items-center text-white font-semibold">
+                            <p>1</p>
+                        </div>
+                        
+                    </div>
+                    <div class="">
+                        <p class="sport-type font-medium text-white">Badminton, Football</p>
+                        <p class="text-white"> <span class="font-medium ">Courts : </span>BA-01, BA-03, BA-02</p>
+                    </div>
+                    
+                </div>
+
+            
+                <div class="booking-date text-white">
+                    <p class="font-medium">Booking date</p>
+                    <p class="">12 Oct, 2023 10:20 AM</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="block rounded-3xl bg-[#295CAB] w-50 font-medium mb-2 text-sm px-4 py-2 text-white">Download Pass</button>
+                    <button class="block rounded-3xl bg-white   w-50 font-medium mb-2 text-[#FF8731] text-sm px-4 py-2 ">Cancel Booking</button>
+                </div>
+
+            </div>
+
+            <div class="booking flex justify-between items-center w-full bg-gradient-to-l from-cyan-600 to-[#295CAB] p-4 rounded-xl my-4">
+                <div class="flex items-center">
+
+                    <div class="searial w-14 h-14 border bg-[#42c99f] rounded-[50%] flex justify-center items-center mr-2">
+
+                        <div class="border-white border-2 h-12 w-12 rounded-[50%] flex justify-center items-center text-white font-semibold">
+                            <p>2</p>
+                        </div>
+                        
+                    </div>
+                    <div class="">
+                        <p class="sport-type font-medium text-white">Badminton, Football</p>
+                        <p class="text-white"> <span class="font-medium ">Courts : </span>BA-01, BA-03, BA-02</p>
+                    </div>
+                    
+                </div>
+
+                
+
+                <div class="booking-date text-white">
+                    <p class="font-medium">Booking date</p>
+                    <p class="">12 Oct, 2023 10:20 AM</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="block rounded-3xl bg-[#295CAB] w-50 font-medium mb-2 text-sm px-4 py-2 text-white">Download Pass</button>
+                    <button class="block rounded-3xl bg-white   w-50 font-medium mb-2 text-[#FF8731] text-sm px-4 py-2 ">Cancel Booking</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="footer-container">
+        
+            <div class="made-by">
+                <p>Developed by</p>
+                <img draggable="false" src="../img/bug-ranger-logo.png" alt="BugRanger Company Logo">
+            </div>
+
+            <div class="terms-privacy">
+                <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div class="company-logo">
+
+                <div class="logo">
+                    <h2>Metro<span>Plex</span></h2>
+                    <p>For everyone</p>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- After template scripts  -->
+    
+</body>
+
+</html>

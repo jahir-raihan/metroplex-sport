@@ -2,12 +2,19 @@
 module.exports = {
   content: ['./html/*.{html,js}'],
   theme: {
-    width:{
-      'login-width': '360px',
-      'full': '100%',
+    extend: {
+      width:{
+        'login-width': '360px',
+        'full': '100%',
+      },
+    
     },
-    extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+        addVariant('child', '& > *');
+        addVariant('child-hover', '& > *:hover');
+    }
+  ],
 }
 
