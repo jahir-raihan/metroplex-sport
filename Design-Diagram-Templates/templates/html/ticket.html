@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Ticket</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        *{
+            margin:0;
+            padding:0;
+            
+        }
+        .container{
+            width:1000px;
+        }
+        table{
+            border:1px solid rgba(0, 0, 0, 0);
+            border-collapse: collapse;
+            width:100%;
+            
+        }
+        table tr td{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:.5em;       
+              
+        }
+        .logo-row{
+            border-right:none;
+            border-left:none;
+        }
+        .logo{
+            
+            font-weight: 600;
+            font-size: 30px;
+        }
+        .logo  span {
+            color: #295CAB;
+            display: unset !important;
+        }
+        .logo-row small{
+            font-weight: 600;
+            color: #295CAB;
+        }
+        .bold{
+            font-weight:500;
+        }
+        .details{
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .details-col{
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .details-row td{
+            text-align: center;   
+            padding:.5em 1em;         
+        }
+
+        .print{
+            width:120px;
+            margin:4em auto;
+            border:none;
+            background:#295CAB;
+            color:white;
+            font-weight:500;
+            font-size:14px;
+            border-radius: 6px;
+            padding:.5em;
+            display: block;
+            cursor:pointer;
+            
+        }
+
+        .logo-and-qr{
+           border:none !important;
+            
+
+        }
+        .logo-and-qr td{
+            border:none !important;
+        }
+        @page{
+            margin:5mm;
+        }
+       
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <table class="ticket-table">
+            <tr class="logo-and-qr">
+                <td colspan="2" class="logo-row">
+                    <p class="logo">Metro<span>Plex</span> Sporting</p>
+                    <small>For everyone</small>
+                </td>
+                <td colspan="2" style="text-align: right;"  class="logo-row">
+                    
+                    <div>
+                        <p style="color:#295CAB; margin-bottom: .5em; font-weight: 600;">Verify</p>
+                        <img style="border:1px solid black; border-radius: 6px; height:120px;" src="../img/qr-code.png" alt="">
+                    </div>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td class="bold">Ticket ID</td>
+                <td colspan="3">some unique random generated key</td>
+            </tr>
+
+            <tr>
+
+                <td class="bold">Booking Time</td>
+                <td colspan="3">12 Oct 2023, 10:18 PM</td>
+            </tr>
+
+            <tr>
+                <td class="bold">Ticket URL</td>
+                <td colspan="3">https://someurl.com/ticket-unique-id/verify/</td>
+            </tr>
+
+            <tr>
+                <td class="bold">Phone</td>
+                <td colspan="3">+880 1975498434</td>
+            </tr>
+
+            <tr>
+                <td class="bold details" colspan="4">Details</td>
+            </tr>
+
+            <tr class="details-row">
+                <td  class="details-col">
+                    Sport Type
+                </td>
+                <td class="details-col">
+                    Match
+                </td>
+                <td class="details-col">
+                    DateTime
+                </td>
+
+                <td class="details-col">
+                    Court | Feild
+                </td>
+            </tr>
+
+            <tr class="details-row"> 
+                <td rowspan="2">Badminton</td>
+                <td>DU_Riders_Storm_Breaker <span>VS</span> Someone_not_interested</td>
+                <td>10 Oct 2023, 11:00 AM - 12:00 PM</td>
+                <td>BC-01</td>
+            </tr>
+            <tr class="details-row">
+                
+                <td>Brac newbies <span>VS</span> Someone_not_interested</td>
+                <td>10 Oct 2023, 11:00 AM - 12:00 PM</td>
+                <td>BC-01</td>
+            </tr>
+            <tr class="details-row">
+                <td rowspan="2">Football</td>
+                <td>DU_Riders_Storm_Breaker <span>VS</span> Someone_not_interested</td>
+                <td>10 Oct 2023, 11:00 AM - 12:00 PM</td>
+                <td>FF-01</td>
+            </tr>
+            <tr class="details-row">
+                
+                <td>Brac newbies <span>VS</span> Someone_not_interested</td>
+                <td>10 Oct 2023, 11:00 AM - 12:00 PM</td>
+                <td>FF-01</td>
+            </tr>
+
+        </table>
+
+        
+        <button class="print" id="print"  onclick="print_ticket()">Print Ticket</button>
+        
+        
+    </div>
+
+    <script>
+        function print_ticket(){
+
+            document.getElementById('print').style.display = 'none'
+            window.print();
+            document.getElementById('print').style.display = 'block'
+        }
+
+    </script>
+    
+</body>
+</html>
