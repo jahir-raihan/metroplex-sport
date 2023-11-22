@@ -65,10 +65,15 @@
     
         display: block;
 
-        .booking-date, .action-buttons{
+        .booking-date, .duration{
         
             padding-left:4em;
             margin:1em 0;
         }
+
+        .booking-date p{
+            text-align: left;
+        }
+       
     }
 }

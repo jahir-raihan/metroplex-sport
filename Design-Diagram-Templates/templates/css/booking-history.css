@@ -45,8 +45,11 @@
   .booking {
     display: block;
   }
-  .booking .booking-date, .booking .action-buttons {
+  .booking .booking-date, .booking .duration {
     padding-left: 4em;
     margin: 1em 0;
+  }
+  .booking .booking-date p {
+    text-align: left;
   }
 }/*# sourceMappingURL=booking-history.css.map */
