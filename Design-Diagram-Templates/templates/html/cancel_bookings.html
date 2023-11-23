@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/login-registration.css">
+    <title>Cancel Bookings</title>
+</head>
+<body>
+
+    <div class="flex items-center justify-center h-screen">
+
+        <div class="w-login-width mx-auto">
+
+            <div class="logo text-center mb-8">
+                <p class="text-2xl text-[#D7874D]  font-semibold">Cancel Bookings</p>
+                
+            </div>
+
+            <div class=" border  rounded-md bg-white shadow ">
+                <div class="flex justify-between px-2 py-4 shadow-lg">
+                    <p  class="text-[#D7874D] text-sm">We've sent an OTP code to your email address rai***bd@gmail.com</p>
+
+                </div>
+
+                <div class="p-2 py-4">
+                   
+                   
+                    <input type="number" class="w-full bg-[#F3F7F8] h-10 border-opacity-60 border p-2 rounded text-sm my-2" placeholder="Enter OTP here">
+
+                       
+                    
+                    <button class="bg-[#295CAB] w-full rounded text-sm font-semibold my-2 text-white p-2 ">Confirm</button>
+
+                    
+                    <p class="text-[#D7874D] text-sm text-center mt-4"> <span id="resend-text">Resend in </span><span id="timer"></span> <a href="registration.html" class="underline text-[#D7874D] text-center" id="resend-link">Resend</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        var countDownDate = new Date("Nov 23, 2023 10:34:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+            
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+        // Output the result in an element with id="demo"
+        document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
+            
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById('timer').style.display = 'none'
+            document.getElementById('resend-text').style.display = 'none'
+            document.getElementById('resend-link').style.display = 'unset'
+        }
+        }, 1000);
+    </script>
+</body>
+</html>
