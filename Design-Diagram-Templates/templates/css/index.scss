@@ -99,8 +99,12 @@ header{
                 display: flex;
                 align-items: center;
                 opacity: var(--opacity-1);
-               
 
+                a{
+                    content: none;
+                    text-decoration: none;
+                    color:unset;
+                }
                 li{
                     opacity: var(--opacity-2);
                     margin-right:1.5em;
@@ -134,6 +138,7 @@ header{
                 background:var(--primary-color);
                 color:white;
                 font-weight: 500;
+                font-size:13px;
 
             }
 

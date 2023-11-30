@@ -90,6 +90,11 @@ header nav .nav-links ul {
   align-items: center;
   opacity: var(--opacity-1);
 }
+header nav .nav-links ul a {
+  content: none;
+  text-decoration: none;
+  color: unset;
+}
 header nav .nav-links ul li {
   opacity: var(--opacity-2);
   margin-right: 1.5em;
@@ -118,6 +123,7 @@ header nav .nav-links .login-btn {
   background: var(--primary-color);
   color: white;
   font-weight: 500;
+  font-size: 13px;
 }
 header nav .nav-links .ham-menu {
   margin-left: 1.5em;
