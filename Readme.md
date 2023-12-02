@@ -36,27 +36,26 @@
 
 ## Search Page**
 
-![Screenshot (1)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/b4860583-4900-4309-9fec-73898eadcb35)
-.
-.
-![Screenshot (2)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/0aab9857-2a5c-4f1c-8e5f-3ae328d27900)
+![Screenshot_4](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/7c523fe8-b173-4576-bf0e-4e69ddae140a)
+
 
 ## Time Slots page
 
-![Screenshot (3)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/03e5d2d9-701a-4cdb-94c8-51b9174d00a0)
-.
-![Screenshot (4)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/a1be0661-f300-4579-945e-184a7e307e81)
-.
-![Screenshot (5)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/debed19c-c754-4c2e-8a15-67ab8072c9f0)
+![Screenshot_2](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/e6cc1886-da53-4160-8b2c-600ea15406b8)
+
 
 ## Example entry pass
 
-![Screenshot (6)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/49473378-ee56-463c-aa86-b4edf95aed18)
+![Screenshot_3](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/30759b8c-2bcb-46ab-9e02-a45deccc6315)
 
 ## Upcoming matches
 
-![Screenshot (7)](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/e2654009-1358-4267-ac91-9282c6e68011)
+![Screenshot_1](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/3460b367-ed37-4114-aad2-c49eb8e0a397)
 
+
+## Login / Register UI
+
+![Screenshot_5](https://github.com/jahir-raihan/metroplex-sport/assets/78207450/3cc87064-2d14-4932-878d-03ec52ac7afe)
 
 ## Contribution Guide
 
