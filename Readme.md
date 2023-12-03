@@ -59,11 +59,11 @@
 
 ## Contribution Guide
 
-**coming soon ...**
+**Will be added soon ..**
 
 ## Docs
 
-**coming soon ...**
+**Will be added soon ...**
 
 
 
