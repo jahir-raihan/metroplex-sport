@@ -59,7 +59,7 @@
 
 ## Contribution Guide
 
-**Will be added soon ..**
+**Head to [Contribution](CONTRIBUTING.md) if you want to contribute to this project.**
 
 ## Docs
 
