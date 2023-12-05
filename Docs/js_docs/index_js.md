@@ -2,7 +2,7 @@
 
 ## Table of contents
 
- - [**Function specifications and usage**]()
+ - [**Function specifications and usage**](#functions)
     - [toggle_nav](#toggle_nav)
 
     
