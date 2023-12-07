@@ -14,7 +14,7 @@
 
 > **<a name="renderer"> Renderer</a>**
   > 
-  > JQuery UI function to pick a date in given range.
+  > Renderer class -> Responsible for rendering process of slots and thier logics.
 
 > **example_function_name()** 
   >
