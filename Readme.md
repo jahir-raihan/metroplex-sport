@@ -63,7 +63,7 @@
 
 ## Docs
 
-**Head to [Documentation](Docs) if you want to know and contribute to this project
+**Head to [Documentation](Docs) if you want to know and contribute to this project**
 
 
 
