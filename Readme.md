@@ -63,7 +63,7 @@
 
 ## Docs
 
-**Will be added soon ...**
+**Head to [Documentation](Docs) if you want to know and contribute to this project
 
 
 
