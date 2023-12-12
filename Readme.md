@@ -29,7 +29,7 @@
 - See upcoming matches.
 - Reservation system for up to 5 minutes when user selects a slots for booking.
 
-**Note: One thing to note that, This repo is opensourced, So anyone experienced with basic html and css can use this repo tempaltes, or if the developer is familiar with python and django, you can modify or add new features and make this as your own project**
+**Note: One thing to note that, This repo is opensourced, So anyone experienced with basic html and css can use this repo templates, or if the developer is familiar with python and django, you can modify or add new features and make this as your own project**
 
 
 # Preview of UI's
