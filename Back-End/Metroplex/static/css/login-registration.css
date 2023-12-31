@@ -1,0 +1,7 @@
+input:focus {
+  background-color: white;
+}
+
+#resend-link {
+  display: none;
+}/*# sourceMappingURL=login-registration.css.map */

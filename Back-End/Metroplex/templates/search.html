@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="metroplex">
+    <meta name="description" content="Metroplex is a well known sporting club  held in Dhaka bangladesh, People around 
+    Dhaka playes different types of sport out there, like Badminton, Cricket, Football. Even there is a place for swimming
+    too.">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <script src="../js/index.js"></script>
+    <script src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Search</title>
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <h2>Metro<span>Plex</span></h2>
+            </div>
+
+            <div class="nav-links">
+
+                <ul class="desktop-nav-links">
+                    <a href="search.html">
+                       <li class="active-nav" id="home-link"><i class="fa fa-house"></i> Home</li> 
+                    </a>
+                    
+                    <a href="upcoming-matches.html">
+                        <li id="upcoming-events-link"><i class="fa fa-hourglass-start"></i> Upcoming matches</li>
+                    </a>
+                    
+                    <li id="about-us-link"><i class="fa fa-circle-info"></i> About us</li>
+
+                </ul>
+
+                <button class="login-btn"><i class="fa fa-arrow-right-to-bracket"></i>  Login</button>
+
+                <div class="ham-menu" onclick="toggle_nav()">
+
+                    <div class="" id="nav-ham">
+                        <div class="b1"></div>
+                        <div class="b2"></div>
+                        <div class="b1"></div>
+                    </div>
+
+                    <div class="d-none" id="nav-ham-cross">
+                        <div class="c-b1"></div>
+                        <div class="c-b2"></div>
+                    </div>
+
+                    <div class="mobile-nav d-none" id="mobile-nav">
+
+                        <ul>
+                            <li onclick="mobile_nav_click_check(this)" class="active-nav" id="home-link"><i class="fa fa-house"></i> Home</li>
+                            <li onclick="mobile_nav_click_check(this)" id="upcoming-events-link"><i class="fa fa-hourglass-start"></i> Upcoming matches</li>
+                            <li onclick="mobile_nav_click_check(this)" id="about-us-link"><i class="fa fa-circle-info"></i> About us</li>
+                            <li onclick="mobile_nav_click_check(this)" id="login-link"><i class="fa fa-arrow-right-to-bracket"></i> Login</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <section class="container" id="container">
+
+        <div class="search-banner-container">
+
+            <form class="search-container" id="search">
+
+                <div class="search-input">
+
+                    <div class="date-input">
+                        <p>Pick a date</p>
+                        <input type="text" autocomplete="off" placeholder="Pick a date" min="" required id="date">
+                    </div>
+
+                    <div class="sport-type-input">
+                        <p>Sport type</p>
+
+                        <div class="select-wrapper">
+                            <select name="sport-type" required id="sport-type">
+
+                                <option value="">Select sport type</option>
+                                <option value="badminton">Badminton</option>
+                                <option value="cricket">Cricket</option>
+                                <option value="football">Football</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-input">
+
+                    <div class="contract-input">
+
+                        <p>Contract duration</p>
+
+                        <div class="select-wrapper">
+
+                            <select name="contract-type" required id="contract-type">
+
+                                <option value="hourly">Hourly</option>
+                                <option value="monthly">Monthly</option>
+                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <p><i class="fa fa-circle-exclamation"></i> Choose contract type hourly to book for an hour or monthly for a month.</p>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <div>
+                        <button type="submit" class="submit-btn">See available slots >></button>
+                    </div>
+                    
+                    <div></div>
+                </div>
+
+            </form>
+
+            <div class="banner-container">
+                <div></div>
+                <img class="banner-img fade"  src="../img/badminton-event-banner.png" alt="metroplex banner">
+                
+                
+                
+            </div>
+
+        </div>
+
+        <div class="steps-to-buy">
+            <div class="steps-root-div">
+                <div>
+                    <img draggable="false" src="../img/select-date.jpg" alt="metroplex banner">
+                    <p>Search</p>
+                    <small>Pick a date, select sport type and contract type for your next game!</small>
+                </div>
+            </div>
+              
+            <div class="steps-root-div">
+                <div>
+
+                    <img draggable="false" src="../img/select-time.jpg" alt="metroplex banner">
+                    <p>Select</p>
+                    <small>Choose your favorite match time to play with your buddies!</small>
+                </div>
+            </div>
+            <div class="steps-root-div">
+                <div>
+
+                    <img draggable="false" src="../img/pay.jpg" alt="metroplex banner">
+                    <p>Pay</p>
+                    <small>Pay for the time slots with bkash and anything!</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="instruction-to-buy">
+            <div class="instruction-banner">
+                <img draggable="false" src="../img/badminton-player.png" alt="metroplex banner">
+            </div>
+
+            <div class="instruction-texts">
+                <p class="instruction-title">Instruction to book time slots</p>
+
+                
+                
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipis  dolor sit amet consectetur adipis ic icing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam  ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                <p class="ins-text">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo dicta sunt dolorum consectetur neque?</span>
+                </p>
+                 
+                
+                 
+                
+            </div>
+
+        </div>
+
+       
+    </section>
+
+    <div class="payment-options">
+
+        <div class="bkash">
+            <img src="../img/bkash-logo.png" alt="Bkash Logo">
+        </div>
+
+        <div class="sslcom">
+            <img src="../img/sslcom-logo.png" alt="SSLCommerze Logo">
+        </div>
+
+    </div>
+
+    <div class="courtesy">
+        <p>** Digital tickets are generated by Ticket Generation System (TGS) developed by <code style="background:var(--primary-color);color:white"> bugRanger </code> </p>
+    </div>
+
+    <footer>
+
+        <div class="footer-container">
+        
+            <div class="made-by">
+                <p>Developed by</p>
+                <img draggable="false" src="../img/bug-ranger-logo.png" alt="BugRanger Company Logo">
+            </div>
+
+            <div class="terms-privacy">
+                <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div class="company-logo">
+
+                <div class="logo">
+                    <h2>Metro<span>Plex</span></h2>
+                    <p>For everyone</p>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- After template scripts  -->
+
+    <script src="../js/search.js"></script>
+
+</body>
+
+</html>

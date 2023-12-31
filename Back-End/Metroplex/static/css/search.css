@@ -1,0 +1,217 @@
+.search-banner-container {
+  width: 100%;
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: 60% 38%;
+  gap: 2%;
+  margin-bottom: 5em;
+}
+.search-banner-container .search-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.search-banner-container .search-container .search-input, .search-banner-container .search-container .submit {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 2%;
+  margin-bottom: 2em;
+  align-items: center;
+}
+.search-banner-container .search-container .search-input p, .search-banner-container .search-container .submit p {
+  font-size: var(--font-size-normal);
+  color: var(--theme-black);
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+.search-banner-container .search-container .search-input input, .search-banner-container .search-container .search-input .select-wrapper, .search-banner-container .search-container .submit input, .search-banner-container .search-container .submit .select-wrapper {
+  border: var(--border);
+  background: rgba(238, 238, 238, 0);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.057);
+  border-radius: 4px;
+  height: 35px;
+  width: 100%;
+  outline-color: black;
+  opacity: var(--opacity-1);
+}
+.search-banner-container .search-container .search-input input, .search-banner-container .search-container .search-input select, .search-banner-container .search-container .submit input, .search-banner-container .search-container .submit select {
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+.search-banner-container .search-container .search-input select, .search-banner-container .search-container .submit select {
+  width: 99%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  opacity: var(--opacity-2);
+}
+.search-banner-container .search-container .search-input .note p i, .search-banner-container .search-container .submit .note p i {
+  color: var(--theme-orange);
+}
+.search-banner-container .search-container .search-input .submit-btn, .search-banner-container .search-container .submit .submit-btn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+}
+.search-banner-container .banner-container {
+  display: flex;
+  justify-content: space-between;
+}
+.search-banner-container .banner-container .fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.search-banner-container .banner-container img {
+  transition-duration: 0.3s;
+  width: 450px;
+  max-height: 450px;
+  border-radius: 6px;
+  border: var(--border);
+  background: rgba(238, 238, 238, 0);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.169);
+}
+
+.steps-to-buy {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5em;
+}
+.steps-to-buy .steps-root-div div {
+  width: 250px;
+}
+.steps-to-buy .steps-root-div div p {
+  font-weight: 500;
+  font-size: var(--font-size-mid);
+  margin-bottom: 0.5em;
+  color: var(--theme-black);
+}
+.steps-to-buy .steps-root-div div small {
+  font-size: var(--font-size-normal);
+  color: var(--theme-light-black-1);
+}
+.steps-to-buy .steps-root-div div img {
+  width: 250px;
+}
+
+.instruction-to-buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5em;
+}
+.instruction-to-buy .instruction-banner img {
+  width: 400px;
+}
+.instruction-to-buy .instruction-texts .instruction-title {
+  font-size: var(--font-size-mid);
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+.instruction-to-buy .instruction-texts .ins-text {
+  margin: 0.5em 0 1em 1em;
+  display: flex;
+  align-items: center;
+}
+.instruction-to-buy .instruction-texts .ins-text i {
+  margin-right: 0.5em;
+  font-size: var(--font-size-mid);
+  color: var(--primary-color);
+}
+.instruction-to-buy .instruction-texts .ins-text span {
+  display: block;
+}
+
+.payment-options {
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+.payment-options img {
+  width: 150px;
+  margin-right: 1em;
+}
+
+.courtesy {
+  width: 80%;
+  margin: 0 auto 5em auto;
+}
+.courtesy p {
+  font-weight: 500;
+  font-size: var(--font-size-normal);
+  text-align: center;
+}
+
+@media only screen and (max-width: 1350px) {
+  .banner-container img {
+    width: 100% !important;
+  }
+  .steps-to-buy .steps-root-div {
+    width: 33% !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .search-banner-container {
+    display: block;
+  }
+  .banner-container img {
+    display: none !important;
+  }
+  .steps-to-buy {
+    display: block;
+  }
+  .steps-to-buy .steps-root-div {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .steps-to-buy .steps-root-div div {
+    margin-bottom: 2em;
+    width: 300px !important;
+  }
+  .steps-to-buy .steps-root-div div img {
+    display: block;
+    margin: auto;
+  }
+  .instruction-to-buy {
+    display: block;
+  }
+  .instruction-to-buy .instruction-banner {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .instruction-to-buy .instruction-banner img {
+    width: 300px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .search-input, .submit {
+    grid-template-columns: 100% !important;
+  }
+  .search-input {
+    margin-bottom: 0 !important;
+  }
+  .date-input, .sport-type-input {
+    margin-bottom: 1em;
+  }
+  .contract-input, .note {
+    margin-bottom: 2em;
+  }
+}/*# sourceMappingURL=search.css.map */

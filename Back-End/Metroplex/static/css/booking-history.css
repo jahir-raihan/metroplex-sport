@@ -1,0 +1,55 @@
+.booking table tr td {
+  padding: 0.5em;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.search-bar-booking-history-upcoming-matches {
+  margin: 2em auto;
+  transition-duration: 0.3s;
+}
+.search-bar-booking-history-upcoming-matches input {
+  height: 40px;
+  border: var(--border);
+  border-right: none;
+  width: 80%;
+  border-radius: 6px 0 0 6px;
+  padding: 0.5em 1em;
+}
+.search-bar-booking-history-upcoming-matches button {
+  height: 40px;
+  background: var(--primary-color);
+  color: white;
+  font-size: var(--font-size-normal);
+  border: none;
+  border-radius: 0 6px 6px 0;
+  padding: 0.5em;
+  width: 20%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search-bar-booking-history-upcoming-matches {
+    width: 90%;
+    transition-duration: 0.3s;
+  }
+  .booking-history {
+    transition-duration: 0.3s;
+    width: 90%;
+  }
+  .message {
+    width: 90%;
+    transition-duration: 0.3s;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .booking {
+    display: block;
+  }
+  .booking .booking-date, .booking .duration {
+    padding-left: 4em;
+    margin: 1em 0;
+  }
+  .booking .booking-date p {
+    text-align: left;
+  }
+}/*# sourceMappingURL=booking-history.css.map */

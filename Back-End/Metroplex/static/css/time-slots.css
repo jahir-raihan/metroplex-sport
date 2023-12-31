@@ -1,0 +1,505 @@
+.search-bar {
+  width: 100%;
+  background: var(--theme-gray);
+}
+.search-bar .search-bar-container {
+  opacity: var(--opacity-1);
+  max-width: 1500px;
+  transition-duration: 0.3s;
+  width: 80%;
+  margin: auto;
+  padding: 3em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar .search-bar-container .search-details {
+  display: flex;
+  align-items: center;
+}
+.search-bar .search-bar-container .search-details .logo img {
+  width: 60px;
+  border-radius: 50%;
+}
+.search-bar .search-bar-container .search-details .s-det {
+  margin-left: 0.5em;
+}
+.search-bar .search-bar-container .search-details .s-det p {
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.search-bar .search-bar-container .search-details .s-det .s-det-title {
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: var(--font-size-sub-mid);
+}
+.search-bar .search-bar-container .prev-next-days button {
+  height: 35px;
+  width: 100px;
+  border: none;
+  background: white;
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.search-bar .search-bar-container .prev-next-days .previous-day {
+  border-radius: 22px 0 0 22px;
+}
+.search-bar .search-bar-container .prev-next-days .next-day {
+  border-radius: 0 22px 22px 0;
+}
+.search-bar .search-bar-container .prev-next-days .disabled {
+  opacity: 0.5;
+}
+.search-bar .search-bar-container .modify-search {
+  height: 35px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 22px;
+  font-weight: 500;
+  color: var(--font-color-white);
+  background: var(--primary-color);
+}
+.search-bar .search-bar-container .modify-search-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar .search-bar-container .modify-search-form p {
+  font-size: var(--font-size-normal);
+  color: var(--theme-black);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.search-bar .search-bar-container .modify-search-form input, .search-bar .search-bar-container .modify-search-form .select-wrapper {
+  border: var(--border);
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.057);
+  border-radius: 4px;
+  height: 35px;
+  width: 100%;
+  min-width: 300px;
+  outline-color: black;
+  opacity: var(--opacity-1);
+}
+.search-bar .search-bar-container .modify-search-form input, .search-bar .search-bar-container .modify-search-form select {
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+.search-bar .search-bar-container .modify-search-form select {
+  width: 99%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  opacity: var(--opacity-2);
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close .close {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close .close span {
+  font-size: var(--font-size-mid);
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close .close-2 {
+  display: none;
+}
+.search-bar .search-bar-container .modify-search-form .search-and-close button {
+  height: 35px;
+  padding: 0.5em 2em;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: var(--font-color-white);
+}
+
+body {
+  background: var(--theme-light-gray);
+}
+
+.courts-or-fields-container .court-or-field {
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+.courts-or-fields-container .court-or-field .c-f-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  align-items: center;
+  background: var(--secondary-color);
+  font-weight: 500;
+  font-size: var(--font-size-normal);
+  padding: 1em;
+  border-radius: 4px;
+}
+.courts-or-fields-container .court-or-field .c-f-header p {
+  color: var(--theme-white);
+}
+.courts-or-fields-container .court-or-field .c-f-header .arrow-indicator-c-f {
+  transition-duration: 0.3s;
+  transform: rotate(90deg);
+}
+.courts-or-fields-container .court-or-field .c-f-h-cng-class {
+  border-radius: 4px 4px 0 0;
+}
+.courts-or-fields-container .court-or-field .c-f-h-cng-class .arrow-indicator-c-f {
+  transition-duration: 0.3s;
+  transform: rotate(-90deg);
+}
+.courts-or-fields-container .court-or-field .c-f-contents {
+  padding: 1em;
+  background: var(--theme-white);
+  position: relative;
+  display: none;
+  border-radius: 0 0 4px 4px;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator p {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-small);
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator p span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 2px;
+  margin-right: 0.5em;
+  background: var(--theme-gray);
+  opacity: var(--opacity-2);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator .booked span {
+  background: var(--theme-orange);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .status-indicator .on-process span {
+  background: var(--theme-black);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .frame-title {
+  padding: 0.3em;
+  border: none;
+  background: rgb(150, 150, 150);
+  color: var(--theme-white);
+  border-radius: 4px;
+  width: 80px;
+  margin-bottom: 1em;
+  font-size: var(--font-size-small);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots {
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots button {
+  padding: 0.3em 0.5em;
+  border: none;
+  border-radius: 4px;
+  background: var(--theme-gray);
+  width: 100%;
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .booked {
+  background: var(--theme-orange);
+  color: var(--theme-white);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: var(--opacity-3);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .on-process {
+  background: var(--theme-black);
+  color: var(--theme-white);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: var(--opacity-3);
+}
+.courts-or-fields-container .court-or-field .c-f-contents .time-frame .time-frame-time-slots .frame-time-slots .selected {
+  background: var(--secondary-color);
+  color: var(--theme-white);
+}
+.courts-or-fields-container .court-or-field .c-f-contents-active {
+  display: block;
+}
+
+.selections-and-team-details {
+  border-top: 3px solid var(--primary-color);
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  padding: 1em 0;
+}
+.selections-and-team-details .title {
+  font-weight: 500;
+  font-size: var(--font-size-sub-mid);
+  color: var(--theme-black);
+  margin-bottom: 0.5em;
+}
+.selections-and-team-details .slot-details-and-total-amount table {
+  width: 100%;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td {
+  font-size: var(--font-size-normal);
+  padding: 1em 0.5em;
+  border-bottom: var(--border);
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td span {
+  display: block;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td:last-child {
+  text-align: center;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr td:last-child i:hover {
+  color: var(--theme-orange);
+  cursor: pointer;
+}
+.selections-and-team-details .slot-details-and-total-amount table tr:last-child td {
+  border-bottom: none;
+}
+.selections-and-team-details .slot-details-and-total-amount table .header-row td {
+  background: var(--theme-gray);
+  padding: 0.5em;
+  font-size: var(--font-size-normal);
+  border-bottom: none;
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.selections-and-team-details .slot-details-and-total-amount table .header-row td:first-child {
+  border-radius: 4px 0 0 4px;
+  width: 50%;
+}
+.selections-and-team-details .slot-details-and-total-amount table .header-row td:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.selections-and-team-details .slot-details-and-total-amount table, .selections-and-team-details .slot-details-and-total-amount th, .selections-and-team-details .slot-details-and-total-amount td {
+  border-collapse: collapse;
+}
+.selections-and-team-details .team-details .team-details-header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--theme-gray);
+  border-radius: 4px;
+  gap: 10%;
+}
+.selections-and-team-details .team-details .team-details-header p {
+  width: 45%;
+  color: var(--theme-black);
+  font-weight: 500;
+  padding: 0.5em;
+  font-size: var(--font-size-normal);
+}
+.selections-and-team-details .team-details .team-details-header p:last-child {
+  padding-left: 0;
+}
+.selections-and-team-details .team-details .team-name-input {
+  padding: 1.1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border);
+}
+.selections-and-team-details .team-details .team-name-input p {
+  font-weight: 500;
+  font-size: var(--font-size-small);
+}
+.selections-and-team-details .team-details .team-name-input input {
+  display: block;
+  width: 45%;
+  height: 35px;
+  border: none;
+  background: var(--theme-light-gray);
+  padding: 0.5em;
+  border-radius: 4px;
+  outline: none;
+  opacity: var(--opacity-1);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.selections-and-team-details .team-details .team-name-input:last-child {
+  border-bottom: none;
+}
+.selections-and-team-details .note-and-total-amount {
+  margin-top: 1em;
+}
+.selections-and-team-details .note-and-total-amount .note {
+  font-size: var(--font-size-normal);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+.selections-and-team-details .note-and-total-amount .note i {
+  color: var(--theme-orange);
+}
+.selections-and-team-details .note-and-total-amount .total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-normal);
+  background: var(--theme-gray);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.total-amount-and-payment-details .title, .total-amount-and-payment-details .payment-title {
+  font-weight: 500;
+  font-size: var(--font-size-regular);
+  margin-bottom: 1em;
+}
+.total-amount-and-payment-details table {
+  width: 100%;
+}
+.total-amount-and-payment-details table tr td {
+  font-size: var(--font-size-normal);
+  padding: 1em 0.5em;
+  font-weight: 500;
+  border-bottom: var(--border);
+}
+.total-amount-and-payment-details table tr td span {
+  display: block;
+}
+.total-amount-and-payment-details table tr td:last-child {
+  text-align: center;
+}
+.total-amount-and-payment-details table tr td:last-child i:hover {
+  color: var(--theme-orange);
+  cursor: pointer;
+}
+.total-amount-and-payment-details table tr:last-child td {
+  border-bottom: none;
+}
+.total-amount-and-payment-details table .table-head td {
+  background: var(--theme-gray);
+  padding: 0.5em;
+  font-size: var(--font-size-normal);
+  border-bottom: none;
+  color: var(--theme-black);
+  font-weight: 500;
+}
+.total-amount-and-payment-details table .table-head td:first-child {
+  border-radius: 4px 0 0 4px;
+  width: 50%;
+}
+.total-amount-and-payment-details table .table-head td:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.total-amount-and-payment-details table, .total-amount-and-payment-details th, .total-amount-and-payment-details td {
+  border-collapse: collapse;
+}
+.total-amount-and-payment-details .total-amount {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-normal);
+  background: var(--theme-gray);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.total-amount-and-payment-details .payment-method {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.total-amount-and-payment-details .payment-method .p-img {
+  width: 100%;
+  border: 2px solid var(--theme-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  padding: 0.5em;
+  height: 70px;
+  cursor: pointer;
+}
+.total-amount-and-payment-details .payment-method .p-img:hover {
+  border: 2px solid var(--primary-color);
+}
+.total-amount-and-payment-details .payment-method img {
+  width: 100px;
+  margin: auto;
+  display: block;
+}
+.total-amount-and-payment-details .proceed-to-payment {
+  height: 35px;
+  width: 100%;
+  margin: 1em 0;
+  border-radius: 4px;
+  background: var(--primary-color);
+  color: var(--theme-white);
+  font-weight: 500;
+  border: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .modify-search-form input, .modify-search-form .select-wrapper {
+    min-width: 200px !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .selections-and-team-details {
+    display: block !important;
+  }
+  .d-none-force {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .search-bar-container {
+    transition-duration: 0.3s;
+    width: 90% !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .modify-search-form {
+    display: block !important;
+  }
+  .modify-search-form .date-input, .modify-search-form .sport-type-input, .modify-search-form .contract-input, .modify-search-form .search-and-close {
+    margin-bottom: 1em;
+  }
+  .modify-search-form .search-and-close {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modify-search-form .search-and-close .close-1 {
+    display: none;
+  }
+  .modify-search-form .search-and-close .close-2 {
+    display: block !important;
+  }
+  .d-none-force {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 675px) {
+  .search-bar-container {
+    display: block !important;
+  }
+  .search-bar-container .toggle-close {
+    margin-bottom: 2em;
+  }
+  .search-bar-container button.modify-search {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .time-frame .frame-title {
+    font-size: var(--font-size-extra-small) !important;
+  }
+  .frame-time-slots button {
+    font-size: var(--font-size-extra-small);
+  }
+}/*# sourceMappingURL=time-slots.css.map */
