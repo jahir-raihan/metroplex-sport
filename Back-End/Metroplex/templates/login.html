@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,9 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
-    <title>Login</title>
+    {% block title %}
+        <title>Login</title>
+    {% endblock title %}
 </head>
 <body>
 
@@ -25,6 +28,8 @@
                 <p class="text-3xl font-bold">Metro<span class="text-[#295CAB]">Plex</span></p>
                 <p class="text-[#295CAB] font-semibold">For everyone</p>
             </div>
+
+            {% block form %}
 
             <div class=" border  rounded-md bg-white shadow ">
                 <div class="flex justify-between px-2 py-4 shadow-lg">
@@ -46,9 +51,11 @@
 
                     <span class="block text-center text-gray-500 text-sm font-semibold my-1">OR</span>
 
-                    <a href="registration.html" class="underline text-[#295CAB] text-center block">Register</a>
+                    <a href="{% url 'register' %}" class="underline text-[#295CAB] text-center block">Register</a>
                 </div>
             </div>
+
+            {% endblock form %}
 
         </div>
     </div>

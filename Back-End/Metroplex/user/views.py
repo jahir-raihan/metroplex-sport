@@ -24,7 +24,7 @@ def login_user(request):
 
         return JsonResponse({"status": status, 'redirect': redirect_user})
 
-    return render(request, 'templates/login.html')
+    return render(request, 'login.html')
 
 
 def register_user(request):
@@ -45,7 +45,7 @@ def register_user(request):
                 status, redirect_user, error = False, False, True
         return JsonResponse({"status": status, "redirect": redirect_user, "error": error})
 
-    return render(request, 'templates/register.html')
+    return render(request, 'register.html')
 
 
 def logout_user(request):

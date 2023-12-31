@@ -1,30 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/output.css">
-    <link rel="stylesheet" href="../css/login-registration.css">
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
-    <title>Login</title>
-</head>
-<body>
+{% extends 'login.html' %}
+{% load static %}
 
-    <div class="flex items-center justify-center h-screen">
+{% block title %}
+    <title>Register</title>
+{% endblock title %}
 
-        <div class="w-login-width mx-auto">
-
-            <div class="logo text-center mb-8">
-                <p class="text-3xl font-bold">Metro<span class="text-[#295CAB]">Plex</span></p>
-                <p class="text-[#295CAB] font-semibold">For everyone</p>
-            </div>
-
+{% block form %}
             <div class=" border  rounded-md bg-white shadow ">
                 <div class="flex justify-between px-2 py-4 shadow-lg">
                     <a href="#" class="text-[#D7874D] text-s">Register</a>
@@ -46,11 +27,7 @@
 
                     <span class="block text-center text-gray-500 text-sm font-semibold my-1">OR</span>
 
-                    <a href="login.html" class="underline text-[#295CAB] text-center block">Login</a>
+                    <a href="{% url 'login' %}" class="underline text-[#295CAB] text-center block">Login</a>
                 </div>
             </div>
-
-        </div>
-    </div>
-</body>
-</html>
+{% endblock form %}
