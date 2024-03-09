@@ -14,6 +14,8 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/login_register.js' %}"></script>
     {% block title %}
         <title>Login</title>
     {% endblock title %}
@@ -39,15 +41,21 @@
                 </div>
 
                 <div class="p-2 py-4">
-                    <input type="text" class="w-full bg-[#F3F7F8] h-10 border-opacity-60 border p-2 rounded text-sm my-2  focus:outline-blue-500" placeholder="Enter your email or mobile number">
+                    <form method="post" id="login-form">
 
-                    <div class="password relative">
-                        <input type="password" class="w-full bg-[#F3F7F8] h-10 border-opacity-60 border p-2 rounded text-sm my-2" placeholder="Enter your password">
+                        {% csrf_token %}
 
-                        <i class="fa fa-eye-slash password-eye absolute top-5 right-2 opacity-50 cursor-pointer hover:opacity-75"></i>
-                    </div>
-                    
-                    <button class="bg-[#295CAB] w-full rounded text-sm font-semibold my-2 text-white p-2 ">Login</button>
+
+                        <input type="email" name="email" class="w-full bg-[#F3F7F8] h-10 border-opacity-60 border p-2 rounded text-sm my-2  focus:outline-blue-500" placeholder="Enter your email or mobile number">
+
+                        <div class="password relative">
+                            <input type="password" name="password" class="w-full bg-[#F3F7F8] h-10 border-opacity-60 border p-2 rounded text-sm my-2" placeholder="Enter your password">
+
+                            <i class="fa fa-eye-slash password-eye absolute top-5 right-2 opacity-50 cursor-pointer hover:opacity-75"></i>
+                        </div>
+
+                        <button class="bg-[#295CAB] w-full rounded text-sm font-semibold my-2 text-white p-2 login-btn" type="submit">Login</button>
+                    </form>
 
                     <span class="block text-center text-gray-500 text-sm font-semibold my-1">OR</span>
 

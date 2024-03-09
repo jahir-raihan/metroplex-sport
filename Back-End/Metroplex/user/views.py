@@ -33,6 +33,8 @@ def register_user(request):
 
     if request.method == 'POST':
 
+        print(request.POST)
+
         status, redirect_user, error = True, True, False
 
         if not request.user.is_authenticated:
@@ -43,7 +45,7 @@ def register_user(request):
                 login(request, user)
             else:
                 status, redirect_user, error = False, False, True
-        return JsonResponse({"status": status, "redirect": redirect_user, "error": error})
+        return JsonResponse({"status": status, "redirect": redirect_user, "error": form.error_messages})
 
     return render(request, 'register.html')
 
