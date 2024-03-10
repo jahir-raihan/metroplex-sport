@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +9,8 @@
     <meta name="description" content="Metroplex is a well known sporting club  held in Dhaka bangladesh, People around 
     Dhaka playes different types of sport out there, like Badminton, Cricket, Football. Even there is a place for swimming
     too.">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,8 +18,8 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-    <script src="../js/index.js"></script>
-    <script src="../js/jquery.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <title>Search</title>
@@ -145,7 +146,7 @@
 
             <div class="banner-container">
                 <div></div>
-                <img class="banner-img fade"  src="../img/badminton-event-banner.png" alt="metroplex banner">
+                <img class="banner-img fade"  src="{% static 'img/badminton-event-banner.png' %}" alt="metroplex banner">
                 
                 
                 
@@ -156,7 +157,7 @@
         <div class="steps-to-buy">
             <div class="steps-root-div">
                 <div>
-                    <img draggable="false" src="../img/select-date.jpg" alt="metroplex banner">
+                    <img draggable="false" src="{% static 'img/select-date.jpg' %}" alt="metroplex banner">
                     <p>Search</p>
                     <small>Pick a date, select sport type and contract type for your next game!</small>
                 </div>
@@ -165,7 +166,7 @@
             <div class="steps-root-div">
                 <div>
 
-                    <img draggable="false" src="../img/select-time.jpg" alt="metroplex banner">
+                    <img draggable="false" src="{% static 'img/select-time.jpg' %}" alt="metroplex banner">
                     <p>Select</p>
                     <small>Choose your favorite match time to play with your buddies!</small>
                 </div>
@@ -173,7 +174,7 @@
             <div class="steps-root-div">
                 <div>
 
-                    <img draggable="false" src="../img/pay.jpg" alt="metroplex banner">
+                    <img draggable="false" src="{% static 'img/pay.jpg' %}" alt="metroplex banner">
                     <p>Pay</p>
                     <small>Pay for the time slots with bkash and anything!</small>
                 </div>
@@ -182,7 +183,7 @@
 
         <div class="instruction-to-buy">
             <div class="instruction-banner">
-                <img draggable="false" src="../img/badminton-player.png" alt="metroplex banner">
+                <img draggable="false" src="{% static 'img/badminton-player.png' %}" alt="metroplex banner">
             </div>
 
             <div class="instruction-texts">
@@ -236,11 +237,11 @@
     <div class="payment-options">
 
         <div class="bkash">
-            <img src="../img/bkash-logo.png" alt="Bkash Logo">
+            <img src="{% static 'img/bkash-logo.png' %}" alt="Bkash Logo">
         </div>
 
         <div class="sslcom">
-            <img src="../img/sslcom-logo.png" alt="SSLCommerze Logo">
+            <img src="{% static 'img/sslcom-logo.png' %}" alt="SSLCommerze Logo">
         </div>
 
     </div>
@@ -255,7 +256,7 @@
         
             <div class="made-by">
                 <p>Developed by</p>
-                <img draggable="false" src="../img/bug-ranger-logo.png" alt="BugRanger Company Logo">
+                <img draggable="false" src="{% static 'img/bug-ranger-logo.png' %}" alt="BugRanger Company Logo">
             </div>
 
             <div class="terms-privacy">
@@ -278,7 +279,7 @@
 
     <!-- After template scripts  -->
 
-    <script src="../js/search.js"></script>
+    <script src="{% static 'js/search.js' %}"></script>
 
 </body>
 
