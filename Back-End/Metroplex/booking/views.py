@@ -18,9 +18,28 @@ class HomeView(View):
         """
         Get method for rendering search page with some banners
         :param request:
-        :return:
         """
 
+        context = {}
+
+        return render(request, self.template_name, context)
+
+
+class SearchView(View):
+
+    """
+    Search view
+    """
+
+    template_name = 'time-slots.html'
+
+    def get(self, request):
+
+        """
+        View after search is being made
+        :param request:
+        :return:
+        """
         context = {}
 
         return render(request, self.template_name, context)
