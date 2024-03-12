@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +9,10 @@
     <meta name="description" content="Metroplex is a well known sporting club  held in Dhaka bangladesh, People around 
     Dhaka playes different types of sport out there, like Badminton, Cricket, Football. Even there is a place for swimming
     too.">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../css/time-slots.css">
-    <link rel="shortcut icon" href="../img/logo-small.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/index.css' %} %}">
+    <link rel="stylesheet" href="{% static 'css/search.css %}">
+    <link rel="stylesheet" href="{% static 'css/time-slots.css %}">
+    <link rel="shortcut icon" href="{% static 'img/logo-small.png %}" type="image/x-icon">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,8 +20,8 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     />
-    <script src="../js/index.js"></script>
-    <script src="../js/jquery.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
     
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -348,10 +349,10 @@
                 
                 <div class="payment-method">
                     <div class="p-img">
-                        <img src="../img/bkash-logo.png" alt="Bkash logo" class="bkash">
+                        <img src="{% static 'img/bkash-logo.png' %}" alt="Bkash logo" class="bkash">
                     </div>
                     <div class="p-img">
-                        <img src="../img/sslcom-logo.png" alt="SSLCom logo" class="sslcom">
+                        <img src="{% static 'img/sslcom-logo.png' %}" alt="SSLCom logo" class="sslcom">
                     </div>
 
                 </div>
@@ -369,7 +370,7 @@
         
             <div class="made-by">
                 <p>Developed by</p>
-                <img draggable="false" src="../img/bug-ranger-logo.png" alt="BugRanger Company Logo">
+                <img draggable="false" src="{% static 'img/bug-ranger-logo.png' %}" alt="BugRanger Company Logo">
             </div>
 
             <div class="terms-privacy">
@@ -391,10 +392,10 @@
     </footer>
 
     <!-- After template scripts  -->
-    <script src="../js/search.js"></script>
-    <script src="../js/time-slots-utility.js"></script>
-    <script src="../js/utility.js"></script>
-    <script src="../js/time-slots.js"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+    <script src="{% static 'js/time-slots-utility.js' %}"></script>
+    <script src="{% static 'js/utility.js' %}"></script>
+    <script src="{% static 'js/time-slots.js' %}"></script>
     
 
 </body>
