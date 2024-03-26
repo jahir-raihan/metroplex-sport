@@ -8,6 +8,7 @@
 ## Technologies that will be used in this project is 
 - Python
 - Django
+- DjangoRestFramework
 - Javascript
 - HTML
 - CSS
