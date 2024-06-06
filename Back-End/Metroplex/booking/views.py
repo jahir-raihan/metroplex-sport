@@ -51,9 +51,14 @@ class SearchView(View):
         data = request.GET
         date = data.get('date')
         sport_type = data.get('sport-type')
-        contract_type = data.get('contract_type')  # This is not required for now at all.
 
-        date = datetime.strptime(date, '%Y-%m-%d').date()
+        # Catch request for invalid lookup and redirect
+        try:
+            if not (date or sport_type):
+                return redirect('home')
+            date = datetime.strptime(date, '%Y-%m-%d').date()
+        except Exception:
+            return redirect('home')
 
         # Filter courts based on sport_type and date
         courts = Court.objects.filter(
