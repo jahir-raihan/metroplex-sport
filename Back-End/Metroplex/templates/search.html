@@ -31,9 +31,9 @@
 
         <nav>
 
-            <div class="logo">
+            <a class="logo" href="{% url 'home' %}">
                 <h2>Metro<span>Plex</span></h2>
-            </div>
+            </a>
 
             <div class="nav-links">
 
@@ -94,7 +94,8 @@
 
                     <div class="date-input">
                         <p>Pick a date</p>
-                        <input type="text" autocomplete="off" placeholder="Pick a date" min="" required id="date">
+                        <input type="text" autocomplete="off"  placeholder="Pick a date" min="" required id="date">
+                        <input type="hidden" id="alt-date" name="date">
                     </div>
 
                     <div class="sport-type-input">
@@ -123,7 +124,7 @@
                             <select name="contract-type" required id="contract-type">
 
                                 <option value="hourly">Hourly</option>
-                                <option value="monthly">Monthly</option>
+<!--                                <option value="monthly">Monthly</option>-->
                             
                             </select>
                         </div>
