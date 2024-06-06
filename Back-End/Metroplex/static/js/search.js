@@ -3,10 +3,11 @@
 
 $( function() {
     $( "#date" ).datepicker({
-        dateFormat: "dd MM, yy",
+        dateFormat: "dd MM, yy", // Display format
+        altFormat: "yy-mm-dd", // Format for alt field (used for sending to server)
+        altField: "#alt-date", // Hidden input field to store the altFormat value
         minDate: new Date(),
-        maxDate: "+1m +1w",
-        
+        maxDate: "+1m +1w"
     });
 } );
 
